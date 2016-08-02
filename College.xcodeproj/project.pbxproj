@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D0644711D5139D00001DD93 /* CollegeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0644701D5139D00001DD93 /* CollegeMapViewController.swift */; };
 		8D5FFEAF1D4FC22200F6E73A /* CollegeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FFEAE1D4FC22200F6E73A /* CollegeTableViewCell.swift */; };
 		8D7AA8941D4FDEE900095D83 /* DisplayCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7AA8931D4FDEE900095D83 /* DisplayCollegeViewController.swift */; };
 		8D8DA46D1D4E7D960076E8E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DA46C1D4E7D960076E8E1 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		6D4F7431DBBD268445390D77 /* Pods-College.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-College.release.xcconfig"; path = "Pods/Target Support Files/Pods-College/Pods-College.release.xcconfig"; sourceTree = "<group>"; };
+		8D0644701D5139D00001DD93 /* CollegeMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeMapViewController.swift; sourceTree = "<group>"; };
 		8D5FFEAE1D4FC22200F6E73A /* CollegeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeTableViewCell.swift; sourceTree = "<group>"; };
 		8D7AA8931D4FDEE900095D83 /* DisplayCollegeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayCollegeViewController.swift; sourceTree = "<group>"; };
 		8D8DA4691D4E7D950076E8E1 /* College.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = College.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 				8D8DA46C1D4E7D960076E8E1 /* AppDelegate.swift */,
 				8D8DA46E1D4E7D960076E8E1 /* ViewController.swift */,
 				8D8DA4701D4E7D960076E8E1 /* Main.storyboard */,
+				8D0644701D5139D00001DD93 /* CollegeMapViewController.swift */,
 				8D5FFEAE1D4FC22200F6E73A /* CollegeTableViewCell.swift */,
 				8D8DA4881D4EE4F20076E8E1 /* Colleges.swift */,
 				8D7AA8931D4FDEE900095D83 /* DisplayCollegeViewController.swift */,
@@ -239,6 +242,7 @@
 				8D8DA4751D4E7D960076E8E1 /* College.xcdatamodeld in Sources */,
 				8D8DA46D1D4E7D960076E8E1 /* AppDelegate.swift in Sources */,
 				8D7AA8941D4FDEE900095D83 /* DisplayCollegeViewController.swift in Sources */,
+				8D0644711D5139D00001DD93 /* CollegeMapViewController.swift in Sources */,
 				8D8DA4891D4EE4F20076E8E1 /* Colleges.swift in Sources */,
 				8D5FFEAF1D4FC22200F6E73A /* CollegeTableViewCell.swift in Sources */,
 			);

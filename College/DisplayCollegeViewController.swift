@@ -53,6 +53,10 @@ class DisplayCollegeViewController: UIViewController {
         
         currentCollegeNameLabel.text = currentCollege.name
         
+        // Swift
+        currentCollegeNameLabel.lineBreakMode = .ByWordWrapping // or NSLineBreakMode.ByWordWrapping
+        currentCollegeNameLabel.numberOfLines = 0
+        
         //ADMISSION RATE
         //admissionRateLabel.text = currentCollege.admissionRate
         
@@ -88,6 +92,12 @@ class DisplayCollegeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "mapSegue" {
+            let destinationVC = segue.destinationViewController as! CollegeMapViewController
+            destinationVC.college = currentCollege
+        }
     }
     
 
