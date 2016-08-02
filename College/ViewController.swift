@@ -38,6 +38,9 @@ class ViewController: UITableViewController {
             //add struct into movies array
             collegesData.append(currentCollege)
         }
+        
+        //NEED TO REMOVE COLLEGES THAT ARE NOT FILLED OUT
+        
         print(collegesData!.count)
         tableView.reloadData()
         
@@ -52,9 +55,15 @@ class ViewController: UITableViewController {
             if identifier == "displayCollege" {
                 // 3
                 // pass information
+
                 print("Transitioning to the Display College View Controller")
                 
-                //let destination =
+                let destinationViewController = segue.destinationViewController as! DisplayCollegeViewController
+                
+                destinationViewController.currentCollege = collegesData[(tableView.indexPathForSelectedRow?.row)!]
+            //destination.performSegueWithIdentifier("displayCollege", sender: self)
+                
+            
             }
         }
     

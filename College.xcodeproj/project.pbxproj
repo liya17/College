@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D5FFEAF1D4FC22200F6E73A /* CollegeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FFEAE1D4FC22200F6E73A /* CollegeTableViewCell.swift */; };
-		8D5FFEB31D4FD85400F6E73A /* DisplayCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FFEB21D4FD85400F6E73A /* DisplayCollegeViewController.swift */; };
+		8D7AA8941D4FDEE900095D83 /* DisplayCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7AA8931D4FDEE900095D83 /* DisplayCollegeViewController.swift */; };
 		8D8DA46D1D4E7D960076E8E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DA46C1D4E7D960076E8E1 /* AppDelegate.swift */; };
 		8D8DA46F1D4E7D960076E8E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DA46E1D4E7D960076E8E1 /* ViewController.swift */; };
 		8D8DA4721D4E7D960076E8E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8DA4701D4E7D960076E8E1 /* Main.storyboard */; };
@@ -23,7 +23,7 @@
 /* Begin PBXFileReference section */
 		6D4F7431DBBD268445390D77 /* Pods-College.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-College.release.xcconfig"; path = "Pods/Target Support Files/Pods-College/Pods-College.release.xcconfig"; sourceTree = "<group>"; };
 		8D5FFEAE1D4FC22200F6E73A /* CollegeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeTableViewCell.swift; sourceTree = "<group>"; };
-		8D5FFEB21D4FD85400F6E73A /* DisplayCollegeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DisplayCollegeViewController.swift; path = ../DisplayCollegeViewController.swift; sourceTree = "<group>"; };
+		8D7AA8931D4FDEE900095D83 /* DisplayCollegeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayCollegeViewController.swift; sourceTree = "<group>"; };
 		8D8DA4691D4E7D950076E8E1 /* College.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = College.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8DA46C1D4E7D960076E8E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D8DA46E1D4E7D960076E8E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,11 +82,11 @@
 			children = (
 				8D8DA4831D4EE1C60076E8E1 /* JSON */,
 				8D8DA46C1D4E7D960076E8E1 /* AppDelegate.swift */,
-				8D5FFEB21D4FD85400F6E73A /* DisplayCollegeViewController.swift */,
 				8D8DA46E1D4E7D960076E8E1 /* ViewController.swift */,
 				8D8DA4701D4E7D960076E8E1 /* Main.storyboard */,
 				8D5FFEAE1D4FC22200F6E73A /* CollegeTableViewCell.swift */,
 				8D8DA4881D4EE4F20076E8E1 /* Colleges.swift */,
+				8D7AA8931D4FDEE900095D83 /* DisplayCollegeViewController.swift */,
 				8D8DA4761D4E7D960076E8E1 /* Assets.xcassets */,
 				8D8DA4781D4E7D960076E8E1 /* LaunchScreen.storyboard */,
 				8D8DA47B1D4E7D960076E8E1 /* Info.plist */,
@@ -238,7 +238,7 @@
 				8D8DA46F1D4E7D960076E8E1 /* ViewController.swift in Sources */,
 				8D8DA4751D4E7D960076E8E1 /* College.xcdatamodeld in Sources */,
 				8D8DA46D1D4E7D960076E8E1 /* AppDelegate.swift in Sources */,
-				8D5FFEB31D4FD85400F6E73A /* DisplayCollegeViewController.swift in Sources */,
+				8D7AA8941D4FDEE900095D83 /* DisplayCollegeViewController.swift in Sources */,
 				8D8DA4891D4EE4F20076E8E1 /* Colleges.swift in Sources */,
 				8D5FFEAF1D4FC22200F6E73A /* CollegeTableViewCell.swift in Sources */,
 			);
