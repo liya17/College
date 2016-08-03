@@ -45,6 +45,10 @@ class DisplayCollegeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = currentCollege.name
+        
+       //self.navigationItem.setHidesBackButton(true, animated:true);
+        //self.navigationItem.backBarButtonItem setTitle:@" "
         // Do any additional setup after loading the view.
     }
     
@@ -98,6 +102,21 @@ class DisplayCollegeViewController: UIViewController {
             let destinationVC = segue.destinationViewController as! CollegeMapViewController
             destinationVC.college = currentCollege
         }
+        
+        if let identifier = segue.identifier {
+            // 2
+            if identifier == "displayNote" {
+                // 3
+                print("Transitioning to the Display Note View Controller")
+            }
+        }
+    }
+    
+    @IBAction func unwindToListNotesViewController(segue: UIStoryboardSegue) {
+        
+        // for now, simply defining the method is sufficient.
+        // we'll add code later
+        
     }
     
 

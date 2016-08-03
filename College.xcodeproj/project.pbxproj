@@ -18,6 +18,8 @@
 		8D8DA47A1D4E7D960076E8E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8DA4781D4E7D960076E8E1 /* LaunchScreen.storyboard */; };
 		8D8DA4851D4EE2BF0076E8E1 /* college.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8DA4841D4EE2BF0076E8E1 /* college.json */; };
 		8D8DA4891D4EE4F20076E8E1 /* Colleges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DA4881D4EE4F20076E8E1 /* Colleges.swift */; };
+		8DE574021D516D16002133DA /* CustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE574011D516D16002133DA /* CustomSearchController.swift */; };
+		8DE574061D517CF8002133DA /* DisplayNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE574051D517CF8002133DA /* DisplayNotesViewController.swift */; };
 		A4DE2767FE386E9432227A62 /* Pods_College.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9596289C43E837DA81E067EE /* Pods_College.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		8D8DA47B1D4E7D960076E8E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D8DA4841D4EE2BF0076E8E1 /* college.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = college.json; sourceTree = "<group>"; };
 		8D8DA4881D4EE4F20076E8E1 /* Colleges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colleges.swift; sourceTree = "<group>"; };
+		8DE574011D516D16002133DA /* CustomSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchController.swift; sourceTree = "<group>"; };
+		8DE574051D517CF8002133DA /* DisplayNotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayNotesViewController.swift; sourceTree = "<group>"; };
 		9596289C43E837DA81E067EE /* Pods_College.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_College.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D52A52EB466F745DEBA1CE /* Pods-College.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-College.debug.xcconfig"; path = "Pods/Target Support Files/Pods-College/Pods-College.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,7 +93,9 @@
 				8D0644701D5139D00001DD93 /* CollegeMapViewController.swift */,
 				8D5FFEAE1D4FC22200F6E73A /* CollegeTableViewCell.swift */,
 				8D8DA4881D4EE4F20076E8E1 /* Colleges.swift */,
+				8DE574011D516D16002133DA /* CustomSearchController.swift */,
 				8D7AA8931D4FDEE900095D83 /* DisplayCollegeViewController.swift */,
+				8DE574051D517CF8002133DA /* DisplayNotesViewController.swift */,
 				8D8DA4761D4E7D960076E8E1 /* Assets.xcassets */,
 				8D8DA4781D4E7D960076E8E1 /* LaunchScreen.storyboard */,
 				8D8DA47B1D4E7D960076E8E1 /* Info.plist */,
@@ -238,10 +244,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DE574061D517CF8002133DA /* DisplayNotesViewController.swift in Sources */,
 				8D8DA46F1D4E7D960076E8E1 /* ViewController.swift in Sources */,
 				8D8DA4751D4E7D960076E8E1 /* College.xcdatamodeld in Sources */,
 				8D8DA46D1D4E7D960076E8E1 /* AppDelegate.swift in Sources */,
 				8D7AA8941D4FDEE900095D83 /* DisplayCollegeViewController.swift in Sources */,
+				8DE574021D516D16002133DA /* CustomSearchController.swift in Sources */,
 				8D0644711D5139D00001DD93 /* CollegeMapViewController.swift in Sources */,
 				8D8DA4891D4EE4F20076E8E1 /* Colleges.swift in Sources */,
 				8D5FFEAF1D4FC22200F6E73A /* CollegeTableViewCell.swift in Sources */,
