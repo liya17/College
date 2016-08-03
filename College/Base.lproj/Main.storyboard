@@ -22,15 +22,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPo-fW-PQI">
-                                            <rect key="frame" x="8" y="68" width="359" height="18"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="College Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGi-4Q-Wky">
                                             <rect key="frame" x="8" y="43" width="359" height="25"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="21"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPo-fW-PQI">
+                                            <rect key="frame" x="8" y="66" width="359" height="18"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -59,7 +59,7 @@
                     <tabBarItem key="tabBarItem" title="Colleges" id="C2h-nV-ImI"/>
                     <navigationItem key="navigationItem" title="Colleges" id="dfw-pk-jLI"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="9mp-nN-jo6" id="lDT-2f-zfr"/>
+                        <outlet property="searchDisplayController" destination="gWM-qm-stH" id="7PN-EO-Zg0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ck1-VS-LmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -69,6 +69,14 @@
                         <outlet property="searchContentsController" destination="Xb4-3x-79q" id="fIe-Jp-Du3"/>
                         <outlet property="searchResultsDataSource" destination="Xb4-3x-79q" id="Fdl-V5-Ego"/>
                         <outlet property="searchResultsDelegate" destination="Xb4-3x-79q" id="ykH-td-y9p"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="gWM-qm-stH">
+                    <connections>
+                        <outlet property="delegate" destination="Xb4-3x-79q" id="kGH-By-WEN"/>
+                        <outlet property="searchContentsController" destination="Xb4-3x-79q" id="Rqz-94-SJK"/>
+                        <outlet property="searchResultsDataSource" destination="Xb4-3x-79q" id="2xb-3Z-Nls"/>
+                        <outlet property="searchResultsDelegate" destination="Xb4-3x-79q" id="Te7-B7-olB"/>
                     </connections>
                 </searchDisplayController>
             </objects>
@@ -92,7 +100,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G4I-Gt-4ep" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1567.5" y="789.5"/>
+            <point key="canvasLocation" x="1047.5" y="827.5"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="Nfs-IF-hLP">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="U1g-0B-fcn" customClass="SearchViewController" customModule="College" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FpX-3m-g5b"/>
+                        <viewControllerLayoutGuide type="bottom" id="z3u-aI-s3h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ewI-5U-A8k">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s0Y-ul-r5Q">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yA4-iY-4Qp">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yA4-iY-4Qp" id="DIi-PW-ebQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tblSearchResults" destination="s0Y-ul-r5Q" id="n6h-4a-POB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TPU-l4-VCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1680" y="683"/>
         </scene>
         <!--College Map View Controller-->
         <scene sceneID="IlA-4A-GF1">
@@ -568,6 +613,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="noteContentTextView" destination="XCm-aQ-z6I" id="S8k-Bj-aDP"/>
+                        <outlet property="noteTitleTextField" destination="sU7-1G-SGY" id="V6A-SG-a3m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Fv-CX-qja" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="zOV-7s-fZa" userLabel="Exit" sceneMemberID="exit"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DisplayCollegeViewController: UIViewController {
 
@@ -41,6 +42,8 @@ class DisplayCollegeViewController: UIViewController {
     @IBOutlet weak var actMathLabel: UILabel!
     
     var currentCollege: Colleges!
+    
+    var notes = [Note]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,6 +111,16 @@ class DisplayCollegeViewController: UIViewController {
             if identifier == "displayNote" {
                 // 3
                 print("Transitioning to the Display Note View Controller")
+            
+                
+                //FIX THIS
+//                let displayNoteViewController = segue.destinationViewController as! DisplayNotesViewController
+//                // 4
+//                
+//                let note = notes
+//                
+//                displayNoteViewController.note = note
+
             }
         }
     }

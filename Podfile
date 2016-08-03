@@ -10,5 +10,6 @@ target 'College' do
   pod 'Alamofire'
   pod 'AlamofireImage'
   pod 'AlamofireNetworkActivityIndicator'
+  pod ‘RealmSwift’
 
 end

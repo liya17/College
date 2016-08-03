@@ -15,6 +15,11 @@ import AlamofireNetworkActivityIndicator
 class ViewController: UITableViewController {
     
     var collegesData: [Colleges]!
+    
+    var filteredColleges = [Colleges]()
+
+    
+    let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +49,10 @@ class ViewController: UITableViewController {
         print(collegesData!.count)
         tableView.reloadData()
         
-        //print("College \(collegesData)")
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
 
     }
     
@@ -71,20 +79,43 @@ class ViewController: UITableViewController {
     
     // 1
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return collegesData!.count
+        if searchController.active && searchController.searchBar.text != "" {
+            return filteredColleges.count
+        }
+        return collegesData.count
     }
     
     // 2
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // 1
-        let cell = tableView.dequeueReusableCellWithIdentifier("collegeTableViewCell", forIndexPath: indexPath) as! CollegeTableViewCell
-        
-        // 2
-        let college = self.collegesData![indexPath.row]
-        cell.collegeNameLabel.text = college.name
-        cell.locationLabel.text = college.stateAbbrev
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("collegeTableViewCell", forIndexPath: indexPath)
+        let college: Colleges
+        if searchController.active && searchController.searchBar.text != "" {
+            college = filteredColleges[indexPath.row]
+        } else {
+            college = collegesData[indexPath.row]
+        }
+        cell.textLabel?.text = college.name
         return cell
+    }
+    
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        // 1
+//        let cell = tableView.dequeueReusableCellWithIdentifier("collegeTableViewCell", forIndexPath: indexPath) as! CollegeTableViewCell
+//        
+//        // 2
+//        let college = self.collegesData![indexPath.row]
+//        cell.collegeNameLabel.text = college.name
+//        cell.locationLabel.text = college.stateAbbrev
+//        
+//        return cell
+//    }
+    
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        filteredColleges = collegesData.filter { college in
+            return college.name.lowercaseString.containsString(searchText.lowercaseString)
+        }
+        
+        tableView.reloadData()
     }
 
 
@@ -93,5 +124,11 @@ class ViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+extension ViewController: UISearchResultsUpdating {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
 }
 
