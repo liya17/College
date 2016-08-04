@@ -8,19 +8,19 @@
 
 import UIKit
 import SwiftyJSON
-import Alamofire
-import AlamofireImage
-import AlamofireNetworkActivityIndicator
+//import Alamofire
+//import AlamofireImage
+//import AlamofireNetworkActivityIndicator
 
 class ViewController: UITableViewController {
     
     var collegesData: [Colleges]!
     
     var filteredColleges = [Colleges]()
-
     
     let searchController = UISearchController(searchResultsController: nil)
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -53,7 +53,8 @@ class ViewController: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
-
+        
+        //self.navigationItem.titleView = searchController.searchBar
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -70,14 +71,10 @@ class ViewController: UITableViewController {
                 
                 destinationViewController.currentCollege = collegesData[(tableView.indexPathForSelectedRow?.row)!]
             //destination.performSegueWithIdentifier("displayCollege", sender: self)
-                
-            
             }
         }
-    
     }
     
-    // 1
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.active && searchController.searchBar.text != "" {
             return filteredColleges.count
@@ -85,36 +82,42 @@ class ViewController: UITableViewController {
         return collegesData.count
     }
     
-    // 2
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCellWithIdentifier("collegeTableViewCell", forIndexPath: indexPath)
+//        let college: Colleges
+//        if searchController.active && searchController.searchBar.text != "" {
+//            college = filteredColleges[indexPath.row]
+//        } else {
+//            college = collegesData[indexPath.row]
+//        }
+//        cell.textLabel?.text = college.name
+//        cell.textLabel?.text = college.stateAbbrev
+//        return cell
+//    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("collegeTableViewCell", forIndexPath: indexPath)
+        // 1
+        let cell = tableView.dequeueReusableCellWithIdentifier("collegeTableViewCell", forIndexPath: indexPath) as! CollegeTableViewCell
+        
         let college: Colleges
         if searchController.active && searchController.searchBar.text != "" {
             college = filteredColleges[indexPath.row]
         } else {
             college = collegesData[indexPath.row]
         }
-        cell.textLabel?.text = college.name
+        
+        // 2
+        //let college = self.collegesData![indexPath.row]
+        cell.collegeNameLabel.text = college.name
+        cell.locationLabel.text = college.stateAbbrev
+        
         return cell
     }
-    
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        // 1
-//        let cell = tableView.dequeueReusableCellWithIdentifier("collegeTableViewCell", forIndexPath: indexPath) as! CollegeTableViewCell
-//        
-//        // 2
-//        let college = self.collegesData![indexPath.row]
-//        cell.collegeNameLabel.text = college.name
-//        cell.locationLabel.text = college.stateAbbrev
-//        
-//        return cell
-//    }
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         filteredColleges = collegesData.filter { college in
             return college.name.lowercaseString.containsString(searchText.lowercaseString)
         }
-        
         tableView.reloadData()
     }
 
@@ -123,7 +126,6 @@ class ViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 }
 
 extension ViewController: UISearchResultsUpdating {

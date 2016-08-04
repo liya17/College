@@ -15,6 +15,12 @@ class DisplayCollegeViewController: UIViewController {
     
     @IBOutlet weak var admissionRateLabel: UILabel!
     
+    
+    
+    @IBOutlet weak var heartButton: UIButton!
+    
+    
+    
     @IBOutlet weak var stateLabel: UILabel!
     
     @IBOutlet weak var inStateLabel: UILabel!
@@ -96,6 +102,11 @@ class DisplayCollegeViewController: UIViewController {
         
     }
 
+    // ADD COLLEGE TO MYLIST
+    @IBAction func heartButtonTapped(sender: AnyObject) {
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
