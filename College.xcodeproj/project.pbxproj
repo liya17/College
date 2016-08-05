@@ -10,10 +10,11 @@
 		8D0644711D5139D00001DD93 /* CollegeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0644701D5139D00001DD93 /* CollegeMapViewController.swift */; };
 		8D0DFF971D5184E300694A0F /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0DFF961D5184E300694A0F /* Note.swift */; };
 		8D0DFF9A1D52311400694A0F /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0DFF991D52311400694A0F /* RealmHelper.swift */; };
+		8D14CEDF1D54E86A0012491F /* myListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D14CEDE1D54E86A0012491F /* myListViewController.swift */; };
+		8D14CEE11D54E9910012491F /* SelectedCollegeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D14CEE01D54E9910012491F /* SelectedCollegeTableViewCell.swift */; };
 		8D5FFEAF1D4FC22200F6E73A /* CollegeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FFEAE1D4FC22200F6E73A /* CollegeTableViewCell.swift */; };
 		8D79F46C1D5242590034FD26 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D79F46A1D5242590034FD26 /* Realm.framework */; };
 		8D79F46D1D5242590034FD26 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D79F46B1D5242590034FD26 /* RealmSwift.framework */; };
-		8D79F4711D5276000034FD26 /* CustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D79F4701D5276000034FD26 /* CustomSearchController.swift */; };
 		8D7AA8941D4FDEE900095D83 /* DisplayCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7AA8931D4FDEE900095D83 /* DisplayCollegeViewController.swift */; };
 		8D8DA46D1D4E7D960076E8E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DA46C1D4E7D960076E8E1 /* AppDelegate.swift */; };
 		8D8DA46F1D4E7D960076E8E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DA46E1D4E7D960076E8E1 /* ViewController.swift */; };
@@ -32,10 +33,11 @@
 		8D0644701D5139D00001DD93 /* CollegeMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeMapViewController.swift; sourceTree = "<group>"; };
 		8D0DFF961D5184E300694A0F /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		8D0DFF991D52311400694A0F /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		8D14CEDE1D54E86A0012491F /* myListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myListViewController.swift; sourceTree = "<group>"; };
+		8D14CEE01D54E9910012491F /* SelectedCollegeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedCollegeTableViewCell.swift; sourceTree = "<group>"; };
 		8D5FFEAE1D4FC22200F6E73A /* CollegeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeTableViewCell.swift; sourceTree = "<group>"; };
 		8D79F46A1D5242590034FD26 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		8D79F46B1D5242590034FD26 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
-		8D79F4701D5276000034FD26 /* CustomSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchController.swift; sourceTree = "<group>"; };
 		8D7AA8931D4FDEE900095D83 /* DisplayCollegeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayCollegeViewController.swift; sourceTree = "<group>"; };
 		8D8DA4691D4E7D950076E8E1 /* College.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = College.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8DA46C1D4E7D960076E8E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,8 +130,10 @@
 				8D0DFF981D5230BE00694A0F /* Helpers */,
 				8D8DA46E1D4E7D960076E8E1 /* ViewController.swift */,
 				8D8DA4701D4E7D960076E8E1 /* Main.storyboard */,
+				8D14CEDE1D54E86A0012491F /* myListViewController.swift */,
 				8D0644701D5139D00001DD93 /* CollegeMapViewController.swift */,
 				8D5FFEAE1D4FC22200F6E73A /* CollegeTableViewCell.swift */,
+				8D14CEE01D54E9910012491F /* SelectedCollegeTableViewCell.swift */,
 				8D8DA4881D4EE4F20076E8E1 /* Colleges.swift */,
 				8D7AA8931D4FDEE900095D83 /* DisplayCollegeViewController.swift */,
 				8DE574051D517CF8002133DA /* DisplayNotesViewController.swift */,
@@ -137,7 +141,6 @@
 				8D8DA4781D4E7D960076E8E1 /* LaunchScreen.storyboard */,
 				8D8DA47B1D4E7D960076E8E1 /* Info.plist */,
 				8D8DA4731D4E7D960076E8E1 /* College.xcdatamodeld */,
-				8D79F4701D5276000034FD26 /* CustomSearchController.swift */,
 			);
 			path = College;
 			sourceTree = "<group>";
@@ -282,9 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D79F4711D5276000034FD26 /* CustomSearchController.swift in Sources */,
 				8DE574061D517CF8002133DA /* DisplayNotesViewController.swift in Sources */,
 				8D8DA46F1D4E7D960076E8E1 /* ViewController.swift in Sources */,
+				8D14CEE11D54E9910012491F /* SelectedCollegeTableViewCell.swift in Sources */,
 				8D8DA4751D4E7D960076E8E1 /* College.xcdatamodeld in Sources */,
 				8D8DA46D1D4E7D960076E8E1 /* AppDelegate.swift in Sources */,
 				8D7AA8941D4FDEE900095D83 /* DisplayCollegeViewController.swift in Sources */,
@@ -292,6 +295,7 @@
 				8D0DFF9A1D52311400694A0F /* RealmHelper.swift in Sources */,
 				8D0644711D5139D00001DD93 /* CollegeMapViewController.swift in Sources */,
 				8D8DA4891D4EE4F20076E8E1 /* Colleges.swift in Sources */,
+				8D14CEDF1D54E86A0012491F /* myListViewController.swift in Sources */,
 				8D5FFEAF1D4FC22200F6E73A /* CollegeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

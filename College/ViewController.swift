@@ -20,10 +20,9 @@ class ViewController: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         // Do any additional setup after loading the view, typically from a nib.
         guard let jsonURL = NSBundle.mainBundle().URLForResource("college", withExtension: "json") else {
             print("Could not find json!")
@@ -35,9 +34,7 @@ class ViewController: UITableViewController {
         let allCollegesData = collegeData.arrayValue
         
         collegesData = []
-        
-        //print("The top college is \(allCollegesData.name)")
-        
+                
         for college in allCollegesData {
             let currentCollege = Colleges(json: college)
             //add struct into movies array
@@ -52,9 +49,15 @@ class ViewController: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
-        tableView.tableHeaderView = searchController.searchBar
+        //tableView.tableHeaderView = searchController.searchBar
         
-        //self.navigationItem.titleView = searchController.searchBar
+        self.navigationItem.titleView = searchController.searchBar
+        
+        searchController.hidesNavigationBarDuringPresentation = false
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -70,7 +73,6 @@ class ViewController: UITableViewController {
                 let destinationViewController = segue.destinationViewController as! DisplayCollegeViewController
                 
                 destinationViewController.currentCollege = collegesData[(tableView.indexPathForSelectedRow?.row)!]
-            //destination.performSegueWithIdentifier("displayCollege", sender: self)
             }
         }
     }
@@ -121,11 +123,13 @@ class ViewController: UITableViewController {
         tableView.reloadData()
     }
 
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
 }
 
 extension ViewController: UISearchResultsUpdating {

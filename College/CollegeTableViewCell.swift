@@ -10,13 +10,9 @@ import Foundation
 import UIKit
 
 class CollegeTableViewCell: UITableViewCell {
-    
 
     @IBOutlet weak var collegeNameLabel: UILabel!
 
     @IBOutlet weak var locationLabel: UILabel!
     
-    
-    
-
 }

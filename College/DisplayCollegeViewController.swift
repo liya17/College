@@ -7,19 +7,13 @@
 //
 
 import UIKit
-import RealmSwift
+import SwiftyJSON
 
 class DisplayCollegeViewController: UIViewController {
 
     @IBOutlet weak var currentCollegeNameLabel: UILabel!
-    
+
     @IBOutlet weak var admissionRateLabel: UILabel!
-    
-    
-    
-    @IBOutlet weak var heartButton: UIButton!
-    
-    
     
     @IBOutlet weak var stateLabel: UILabel!
     
@@ -28,8 +22,6 @@ class DisplayCollegeViewController: UIViewController {
     @IBOutlet weak var outStateLabel: UILabel!
     
     @IBOutlet weak var financialAidLabel: UILabel!
-    
-    @IBOutlet weak var percentAdmitLabel: UILabel!
     
     @IBOutlet weak var totalAppLabel: UILabel!
     
@@ -47,18 +39,31 @@ class DisplayCollegeViewController: UIViewController {
     
     @IBOutlet weak var actMathLabel: UILabel!
     
+    @IBOutlet weak var heartButton: UIButton!
+    
     var currentCollege: Colleges!
     
     var notes = [Note]()
     
+    var selectedColleges: [Colleges]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = currentCollege.name
         
-       //self.navigationItem.setHidesBackButton(true, animated:true);
-        //self.navigationItem.backBarButtonItem setTitle:@" "
-        // Do any additional setup after loading the view.
+        guard let jsonURL = NSBundle.mainBundle().URLForResource("college", withExtension: "json")
+            else{
+                print("Could not find json!")
+                return
+        }
+        
+        let jsonData = NSData(contentsOfURL: jsonURL)!
+        
+        let selectedData = JSON(data:jsonData)
+        
+        let selectedCollegeData = selectedData.arrayValue
+        
+        selectedColleges = []
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -71,7 +76,7 @@ class DisplayCollegeViewController: UIViewController {
         currentCollegeNameLabel.numberOfLines = 0
         
         //ADMISSION RATE
-        //admissionRateLabel.text = currentCollege.admissionRate
+        admissionRateLabel.text = currentCollege.percentAdmitted + "%"
         
         stateLabel.text = currentCollege.stateAbbrev
         
@@ -81,7 +86,7 @@ class DisplayCollegeViewController: UIViewController {
         
         financialAidLabel.text = currentCollege.financialAid
         
-        percentAdmitLabel.text = currentCollege.percentAdmitted
+        //percentAdmitLabel.text = currentCollege.percentAdmitted
         
         totalAppLabel.text = currentCollege.applicantsTotal
         
@@ -99,11 +104,12 @@ class DisplayCollegeViewController: UIViewController {
         
         actMathLabel.text = currentCollege.actMath75
         
-        
     }
 
     // ADD COLLEGE TO MYLIST
     @IBAction func heartButtonTapped(sender: AnyObject) {
+        
+        selectedColleges.append(currentCollege)
         
     }
     
@@ -122,16 +128,6 @@ class DisplayCollegeViewController: UIViewController {
             if identifier == "displayNote" {
                 // 3
                 print("Transitioning to the Display Note View Controller")
-            
-                
-                //FIX THIS
-//                let displayNoteViewController = segue.destinationViewController as! DisplayNotesViewController
-//                // 4
-//                
-//                let note = notes
-//                
-//                displayNoteViewController.note = note
-
             }
         }
     }
