@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftyJSON
+import RealmSwift
+
 //import Alamofire
 //import AlamofireImage
 //import AlamofireNetworkActivityIndicator
@@ -22,6 +24,8 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+         //notes = RealmHelper.retrieveNotes() //wants to update the notes property every time the ListNotesViewController is loaded
         
         // Do any additional setup after loading the view, typically from a nib.
         guard let jsonURL = NSBundle.mainBundle().URLForResource("college", withExtension: "json") else {
@@ -54,6 +58,7 @@ class ViewController: UITableViewController {
         self.navigationItem.titleView = searchController.searchBar
         
         searchController.hidesNavigationBarDuringPresentation = false
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -73,6 +78,24 @@ class ViewController: UITableViewController {
                 let destinationViewController = segue.destinationViewController as! DisplayCollegeViewController
                 
                 destinationViewController.currentCollege = collegesData[(tableView.indexPathForSelectedRow?.row)!]
+
+            }
+        }
+        
+        if let identifier = segue.identifier {
+            if identifier == "displayNote" {
+                print("Table view cell tapped")
+                
+//                let indexPath = tableView.indexPathForSelectedRow! //uniquely identify each cell only using the row property of its corresponding index path --> use indexPath.row to retrieve the notes from the ntoes array that corresponds to the touched cell
+//                let note = notes[indexPath.row]
+//                let displayNoteViewController = segue.destinationViewController as! DisplayNotesViewController
+//                //destinationViewController --> get access to the Display Note View Controller
+//                
+//                displayNoteViewController.note = note
+//                //setting the note property of the Display Note View Controller to the corresponding to the cell that the user tapped
+                
+            } else if identifier == "addNote" {
+                print("+ button tapped")
             }
         }
     }
@@ -115,6 +138,7 @@ class ViewController: UITableViewController {
         
         return cell
     }
+    
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         filteredColleges = collegesData.filter { college in

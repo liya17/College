@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 
 struct Colleges {
+    let unitId: String
     let name: String
     let stateAbbrev: String
     let inStatePrice: String
@@ -26,6 +27,7 @@ struct Colleges {
     let actMath75: String
     
     init(json: JSON) {
+        self.unitId = json["UnitID"].stringValue
         self.name = json["Institution Name"].stringValue
         self.stateAbbrev = json["State abbreviation (HD2015)"].stringValue
         self.inStatePrice = json[ "Total price for in-state students living on campus 2015-16 (DRVIC2015)"].stringValue

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8D0644711D5139D00001DD93 /* CollegeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0644701D5139D00001DD93 /* CollegeMapViewController.swift */; };
-		8D0DFF971D5184E300694A0F /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0DFF961D5184E300694A0F /* Note.swift */; };
-		8D0DFF9A1D52311400694A0F /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0DFF991D52311400694A0F /* RealmHelper.swift */; };
 		8D14CEDF1D54E86A0012491F /* myListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D14CEDE1D54E86A0012491F /* myListViewController.swift */; };
 		8D14CEE11D54E9910012491F /* SelectedCollegeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D14CEE01D54E9910012491F /* SelectedCollegeTableViewCell.swift */; };
 		8D5FFEAF1D4FC22200F6E73A /* CollegeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FFEAE1D4FC22200F6E73A /* CollegeTableViewCell.swift */; };
@@ -24,6 +22,8 @@
 		8D8DA47A1D4E7D960076E8E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8DA4781D4E7D960076E8E1 /* LaunchScreen.storyboard */; };
 		8D8DA4851D4EE2BF0076E8E1 /* college.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D8DA4841D4EE2BF0076E8E1 /* college.json */; };
 		8D8DA4891D4EE4F20076E8E1 /* Colleges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8DA4881D4EE4F20076E8E1 /* Colleges.swift */; };
+		8DD70DA51D55777400A5FBB9 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD70DA41D55777400A5FBB9 /* CustomSearchBar.swift */; };
+		8DD70DA71D55785900A5FBB9 /* CustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD70DA61D55785900A5FBB9 /* CustomSearchController.swift */; };
 		8DE574061D517CF8002133DA /* DisplayNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE574051D517CF8002133DA /* DisplayNotesViewController.swift */; };
 		A4DE2767FE386E9432227A62 /* Pods_College.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9596289C43E837DA81E067EE /* Pods_College.framework */; };
 /* End PBXBuildFile section */
@@ -31,8 +31,6 @@
 /* Begin PBXFileReference section */
 		6D4F7431DBBD268445390D77 /* Pods-College.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-College.release.xcconfig"; path = "Pods/Target Support Files/Pods-College/Pods-College.release.xcconfig"; sourceTree = "<group>"; };
 		8D0644701D5139D00001DD93 /* CollegeMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeMapViewController.swift; sourceTree = "<group>"; };
-		8D0DFF961D5184E300694A0F /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		8D0DFF991D52311400694A0F /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		8D14CEDE1D54E86A0012491F /* myListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myListViewController.swift; sourceTree = "<group>"; };
 		8D14CEE01D54E9910012491F /* SelectedCollegeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedCollegeTableViewCell.swift; sourceTree = "<group>"; };
 		8D5FFEAE1D4FC22200F6E73A /* CollegeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeTableViewCell.swift; sourceTree = "<group>"; };
@@ -49,6 +47,8 @@
 		8D8DA47B1D4E7D960076E8E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D8DA4841D4EE2BF0076E8E1 /* college.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = college.json; sourceTree = "<group>"; };
 		8D8DA4881D4EE4F20076E8E1 /* Colleges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colleges.swift; sourceTree = "<group>"; };
+		8DD70DA41D55777400A5FBB9 /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		8DD70DA61D55785900A5FBB9 /* CustomSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchController.swift; sourceTree = "<group>"; };
 		8DE574051D517CF8002133DA /* DisplayNotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayNotesViewController.swift; sourceTree = "<group>"; };
 		9596289C43E837DA81E067EE /* Pods_College.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_College.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D52A52EB466F745DEBA1CE /* Pods-College.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-College.debug.xcconfig"; path = "Pods/Target Support Files/Pods-College/Pods-College.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,7 +80,6 @@
 		8D0DFF931D5184BC00694A0F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8D0DFF961D5184E300694A0F /* Note.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -88,7 +87,6 @@
 		8D0DFF981D5230BE00694A0F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8D0DFF991D52311400694A0F /* RealmHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -132,6 +130,8 @@
 				8D8DA4701D4E7D960076E8E1 /* Main.storyboard */,
 				8D14CEDE1D54E86A0012491F /* myListViewController.swift */,
 				8D0644701D5139D00001DD93 /* CollegeMapViewController.swift */,
+				8DD70DA41D55777400A5FBB9 /* CustomSearchBar.swift */,
+				8DD70DA61D55785900A5FBB9 /* CustomSearchController.swift */,
 				8D5FFEAE1D4FC22200F6E73A /* CollegeTableViewCell.swift */,
 				8D14CEE01D54E9910012491F /* SelectedCollegeTableViewCell.swift */,
 				8D8DA4881D4EE4F20076E8E1 /* Colleges.swift */,
@@ -285,17 +285,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DD70DA71D55785900A5FBB9 /* CustomSearchController.swift in Sources */,
 				8DE574061D517CF8002133DA /* DisplayNotesViewController.swift in Sources */,
 				8D8DA46F1D4E7D960076E8E1 /* ViewController.swift in Sources */,
 				8D14CEE11D54E9910012491F /* SelectedCollegeTableViewCell.swift in Sources */,
 				8D8DA4751D4E7D960076E8E1 /* College.xcdatamodeld in Sources */,
 				8D8DA46D1D4E7D960076E8E1 /* AppDelegate.swift in Sources */,
 				8D7AA8941D4FDEE900095D83 /* DisplayCollegeViewController.swift in Sources */,
-				8D0DFF971D5184E300694A0F /* Note.swift in Sources */,
-				8D0DFF9A1D52311400694A0F /* RealmHelper.swift in Sources */,
 				8D0644711D5139D00001DD93 /* CollegeMapViewController.swift in Sources */,
 				8D8DA4891D4EE4F20076E8E1 /* Colleges.swift in Sources */,
 				8D14CEDF1D54E86A0012491F /* myListViewController.swift in Sources */,
+				8DD70DA51D55777400A5FBB9 /* CustomSearchBar.swift in Sources */,
 				8D5FFEAF1D4FC22200F6E73A /* CollegeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

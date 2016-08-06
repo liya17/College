@@ -43,9 +43,10 @@ class DisplayCollegeViewController: UIViewController {
     
     var currentCollege: Colleges!
     
-    var notes = [Note]()
+    var selectedColleges = [String]()
     
-    var selectedColleges: [Colleges]!
+    let kUserDefault = NSUserDefaults.standardUserDefaults()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +64,7 @@ class DisplayCollegeViewController: UIViewController {
         let selectedCollegeData = selectedData.arrayValue
         
         selectedColleges = []
+
         
     }
     
@@ -108,8 +110,20 @@ class DisplayCollegeViewController: UIViewController {
 
     // ADD COLLEGE TO MYLIST
     @IBAction func heartButtonTapped(sender: AnyObject) {
+       
+        let prefs = NSUserDefaults.standardUserDefaults()
+            //prefs.removeObjectForKey("selectedColleges")
+        if let userDefaults = prefs.objectForKey("selectedColleges") as? [String] {
+            var iheartcollege = prefs.objectForKey("selectedColleges") as! [String]
+            iheartcollege.append(currentCollege.unitId)
+            prefs.setObject(iheartcollege, forKey: "selectedColleges")
+        } else {
+            selectedColleges.append(currentCollege.unitId)
+            prefs.setObject(selectedColleges, forKey: "selectedColleges")
+        }
         
-        selectedColleges.append(currentCollege)
+        let userDefaults = prefs.objectForKey("selectedColleges") as! [String]
+        print("lol", userDefaults)
         
     }
     
@@ -117,19 +131,15 @@ class DisplayCollegeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "mapSegue" {
             let destinationVC = segue.destinationViewController as! CollegeMapViewController
             destinationVC.college = currentCollege
         }
         
-        if let identifier = segue.identifier {
-            // 2
-            if identifier == "displayNote" {
-                // 3
-                print("Transitioning to the Display Note View Controller")
-            }
-        }
+        
+        
     }
     
     @IBAction func unwindToListNotesViewController(segue: UIStoryboardSegue) {
