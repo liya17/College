@@ -55,14 +55,47 @@ class ViewController: UITableViewController {
         definesPresentationContext = true
         //tableView.tableHeaderView = searchController.searchBar
         
-        self.navigationItem.titleView = searchController.searchBar
+        //self.navigationItem.titleView = searchController.searchBar
         
         searchController.hidesNavigationBarDuringPresentation = false
         
+        navigationController?.navigationBar.barTintColor = UIColor(red: 0.0/255.0, green: 240.0/255.0, blue: 203.0/255.0, alpha: 1.0)
+        
+        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
+        UITabBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 240.0/255.0, blue: 203.0/255.0, alpha: 1.0)
+        
+        let tableHeaderView: UIView = UIView.init(frame: searchController.searchBar.frame)
+        tableHeaderView.addSubview(searchController.searchBar)
+        self.tableView.tableHeaderView = tableHeaderView
+    
+//        self.searchController.searchBar.backgroundColor = UIColor.whiteColor()
+//        self.searchController.searchBar.layer.borderWidth = 0
+//        self.searchController.searchBar.layer.borderColor = UIColor.whiteColor().CGColor
+//        self.searchController.searchBar.layer.backgroundColor = UIColor.whiteColor().CGColor
+//        self.searchController.searchBar.tintColor = UIColor(red: 0.3, green: 0.63, blue: 0.22, alpha: 1)
+//        self.searchController.searchBar.searchBarStyle = UISearchBarStyle.Prominent
+//        self.searchController.searchBar.translucent = false
+//        let textFieldInsideSearchBar = self.searchController.searchBar.valueForKey("searchField") as? UITextField
+//        textFieldInsideSearchBar?.backgroundColor = UIColor.whiteColor()
+
     }
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        let searchBar:UISearchBar = searchController.searchBar
+        var searchBarFrame:CGRect = searchBar.frame
+        if searchController.active {
+            searchBarFrame.origin.y = 10
+        }
+        else {
+            searchBarFrame.origin.y = max(0, scrollView.contentOffset.y + scrollView.contentInset.top)
+            
+        }
+        searchController.searchBar.frame = searchBarFrame
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
