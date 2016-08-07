@@ -25,6 +25,12 @@ struct Colleges {
     let actCom75: String
     let actE75: String
     let actMath75: String
+    let satCritical25: String
+    let satMath25: String
+    let satWriting25: String
+    let actCom25: String
+    let actE25: String
+    let actMath25: String
     
     init(json: JSON) {
         self.unitId = json["UnitID"].stringValue
@@ -37,10 +43,16 @@ struct Colleges {
         self.applicantsTotal = json["Applicants total (ADM2014)"].stringValue
         self.enrolledTotal = json["Enrolled total (ADM2014)"].stringValue
         self.satCritical75 = json["SAT Critical Reading 75th percentile score (ADM2014)"].stringValue
+        self.satCritical25 = json["SAT Critical Reading 25th percentile score (ADM2014)"].stringValue
+        self.satMath25 = json[ "SAT Math 25th percentile score (ADM2014)"].stringValue
         self.satMath75 = json["SAT Math 75th percentile score (ADM2014)"].stringValue
+        self.satWriting25 = json["SAT Writing 25th percentile score (ADM2014)"].stringValue
         self.satWriting75 = json["SAT Writing 75th percentile score (ADM2014)"].stringValue
+        self.actCom25 = json["ACT Composite 25th percentile score (ADM2014)"].stringValue
         self.actCom75 = json["ACT Composite 75th percentile score (ADM2014)"].stringValue
+        self.actE25 = json["ACT English 25th percentile score (ADM2014)"].stringValue
         self.actE75 = json["ACT English 75th percentile score (ADM2014)"].stringValue
+        self.actMath25 = json["ACT Math 25th percentile score (ADM2014)"].stringValue
         self.actMath75 = json["ACT Math 75th percentile score (ADM2014)"].stringValue
     }
     

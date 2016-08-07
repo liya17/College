@@ -59,7 +59,9 @@ class ViewController: UITableViewController {
         
         searchController.hidesNavigationBarDuringPresentation = false
         
-        navigationController?.navigationBar.barTintColor = UIColor(red: 0.0/255.0, green: 240.0/255.0, blue: 203.0/255.0, alpha: 1.0)
+        navigationController?.navigationBar.barTintColor = UIColor.orangeColor()
+        
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor();
         
         self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
@@ -69,15 +71,9 @@ class ViewController: UITableViewController {
         tableHeaderView.addSubview(searchController.searchBar)
         self.tableView.tableHeaderView = tableHeaderView
     
-//        self.searchController.searchBar.backgroundColor = UIColor.whiteColor()
-//        self.searchController.searchBar.layer.borderWidth = 0
-//        self.searchController.searchBar.layer.borderColor = UIColor.whiteColor().CGColor
-//        self.searchController.searchBar.layer.backgroundColor = UIColor.whiteColor().CGColor
-//        self.searchController.searchBar.tintColor = UIColor(red: 0.3, green: 0.63, blue: 0.22, alpha: 1)
-//        self.searchController.searchBar.searchBarStyle = UISearchBarStyle.Prominent
-//        self.searchController.searchBar.translucent = false
-//        let textFieldInsideSearchBar = self.searchController.searchBar.valueForKey("searchField") as? UITextField
-//        textFieldInsideSearchBar?.backgroundColor = UIColor.whiteColor()
+        searchController.searchBar.barTintColor = UIColor.whiteColor()
+        searchController.searchBar.tintColor = UIColor.blackColor()
+        searchController.searchBar.placeholder = "Search for a college..."
 
     }
     

@@ -27,17 +27,29 @@ class DisplayCollegeViewController: UIViewController {
     
     @IBOutlet weak var totalEnrolledLabel: UILabel!
     
-    @IBOutlet weak var satCriticalLabel: UILabel!
+    @IBOutlet weak var satC25: UILabel!
     
-    @IBOutlet weak var satMathLabel: UILabel!
+    @IBOutlet weak var satC75: UILabel!
     
-    @IBOutlet weak var satWritingLabel: UILabel!
+    @IBOutlet weak var satW25: UILabel!
     
-    @IBOutlet weak var actComLabel: UILabel!
+    @IBOutlet weak var satW75: UILabel!
     
-    @IBOutlet weak var actEnglishLabel: UILabel!
+    @IBOutlet weak var satM25: UILabel!
     
-    @IBOutlet weak var actMathLabel: UILabel!
+    @IBOutlet weak var satM75: UILabel!
+    
+    @IBOutlet weak var actC25: UILabel!
+    
+    @IBOutlet weak var actC75: UILabel!
+    
+    @IBOutlet weak var actE25: UILabel!
+    
+    @IBOutlet weak var actE75: UILabel!
+    
+    @IBOutlet weak var actM25: UILabel!
+    
+    @IBOutlet weak var actM75: UILabel!
     
     @IBOutlet weak var heartButton: UIButton!
     
@@ -94,17 +106,29 @@ class DisplayCollegeViewController: UIViewController {
         
         totalEnrolledLabel.text = currentCollege.enrolledTotal
         
-        satCriticalLabel.text = currentCollege.satCritical75
+        satC25.text = currentCollege.satCritical25
         
-        satMathLabel.text = currentCollege.satMath75
+        satC75.text = currentCollege.satCritical75
         
-        satWritingLabel.text = currentCollege.satWriting75
+        satM25.text = currentCollege.satMath25
         
-        actComLabel.text = currentCollege.actCom75
+        satM75.text = currentCollege.satMath75
+       
+        satW25.text = currentCollege.satWriting25
         
-        actEnglishLabel.text = currentCollege.actE75
+        satW75.text = currentCollege.satWriting75
+     
+        actC25.text = currentCollege.actCom25
         
-        actMathLabel.text = currentCollege.actMath75
+        actC75.text = currentCollege.actCom75
+     
+        actE25.text = currentCollege.actE25
+        
+        actE75.text = currentCollege.actE75
+       
+        actM25.text = currentCollege.actMath25
+        
+        actM75.text = currentCollege.actMath75
         
     }
 
@@ -138,9 +162,14 @@ class DisplayCollegeViewController: UIViewController {
             destinationVC.college = currentCollege
         }
         
-        
-        
+//        if segue.identifier == "heartSegue" {
+//            for college in selectedColleges {
+//                print(selectedColleges.count)
+//            }
+//        }
     }
+    
+    
     
     @IBAction func unwindToListNotesViewController(segue: UIStoryboardSegue) {
         
