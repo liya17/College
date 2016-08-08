@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8D0644711D5139D00001DD93 /* CollegeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0644701D5139D00001DD93 /* CollegeMapViewController.swift */; };
 		8D5FFEAF1D4FC22200F6E73A /* CollegeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5FFEAE1D4FC22200F6E73A /* CollegeTableViewCell.swift */; };
-		8D6EAC651D5793F3009F7ECF /* myListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6EAC641D5793F3009F7ECF /* myListTableViewController.swift */; };
+		8D6EAC651D5793F3009F7ECF /* MyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6EAC641D5793F3009F7ECF /* MyListTableViewController.swift */; };
 		8D6EAC671D581038009F7ECF /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6EAC661D581038009F7ECF /* RealmHelper.swift */; };
 		8D6EAC691D581052009F7ECF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6EAC681D581052009F7ECF /* Note.swift */; };
 		8D6EAC6F1D581602009F7ECF /* ListNotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6EAC6E1D581602009F7ECF /* ListNotesTableViewController.swift */; };
@@ -32,7 +32,7 @@
 		6D4F7431DBBD268445390D77 /* Pods-College.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-College.release.xcconfig"; path = "Pods/Target Support Files/Pods-College/Pods-College.release.xcconfig"; sourceTree = "<group>"; };
 		8D0644701D5139D00001DD93 /* CollegeMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeMapViewController.swift; sourceTree = "<group>"; };
 		8D5FFEAE1D4FC22200F6E73A /* CollegeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegeTableViewCell.swift; sourceTree = "<group>"; };
-		8D6EAC641D5793F3009F7ECF /* myListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myListTableViewController.swift; sourceTree = "<group>"; };
+		8D6EAC641D5793F3009F7ECF /* MyListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyListTableViewController.swift; sourceTree = "<group>"; };
 		8D6EAC661D581038009F7ECF /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		8D6EAC681D581052009F7ECF /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		8D6EAC6E1D581602009F7ECF /* ListNotesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListNotesTableViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 				8D8DA46C1D4E7D960076E8E1 /* AppDelegate.swift */,
 				8D0DFF981D5230BE00694A0F /* Helpers */,
 				8D8DA46E1D4E7D960076E8E1 /* ViewController.swift */,
-				8D6EAC641D5793F3009F7ECF /* myListTableViewController.swift */,
+				8D6EAC641D5793F3009F7ECF /* MyListTableViewController.swift */,
 				8D6EAC701D581D43009F7ECF /* SelectedCollegeTableViewCell.swift */,
 				8D0644701D5139D00001DD93 /* CollegeMapViewController.swift */,
 				8D6EAC6E1D581602009F7ECF /* ListNotesTableViewController.swift */,
@@ -288,7 +288,7 @@
 				8D8DA46F1D4E7D960076E8E1 /* ViewController.swift in Sources */,
 				8D8DA4751D4E7D960076E8E1 /* College.xcdatamodeld in Sources */,
 				8D8DA46D1D4E7D960076E8E1 /* AppDelegate.swift in Sources */,
-				8D6EAC651D5793F3009F7ECF /* myListTableViewController.swift in Sources */,
+				8D6EAC651D5793F3009F7ECF /* MyListTableViewController.swift in Sources */,
 				8D6EAC711D581D43009F7ECF /* SelectedCollegeTableViewCell.swift in Sources */,
 				8D7AA8941D4FDEE900095D83 /* DisplayCollegeViewController.swift in Sources */,
 				8D6EAC671D581038009F7ECF /* RealmHelper.swift in Sources */,

@@ -87,7 +87,7 @@
         <!--My List Table View Controller-->
         <scene sceneID="6cK-kC-62z">
             <objects>
-                <tableViewController id="5Gv-G4-mU7" customClass="myListTableViewController" customModule="College" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="5Gv-G4-mU7" customClass="MyListTableViewController" customModule="College" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" id="ic7-cE-67S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,6 +115,8 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="collegeLocation" destination="trF-fa-xPg" id="mYB-tD-jIL"/>
+                                    <outlet property="collegeName" destination="HIJ-Ra-vL0" id="CNp-l5-o2a"/>
                                     <outlet property="selectedCollegeLocation" destination="trF-fa-xPg" id="svC-6G-V0H"/>
                                     <outlet property="selectedCollegeName" destination="HIJ-Ra-vL0" id="r1M-PU-Y2B"/>
                                     <segue destination="gPF-gs-cbl" kind="show" id="JSD-5C-WGA"/>
@@ -648,7 +650,7 @@
                                     <state key="selected" image="Shape"/>
                                     <connections>
                                         <action selector="heartButtonTapped:" destination="gPF-gs-cbl" eventType="touchUpInside" id="oO1-b6-P1h"/>
-                                        <segue destination="5Gv-G4-mU7" kind="show" identifier="heartSegue" id="0xi-ke-Rwi"/>
+                                        <segue destination="5Gv-G4-mU7" kind="show" identifier="selectedCollege" id="0xi-ke-Rwi"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
@@ -658,7 +660,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="map_marker"/>
                                     <connections>
-                                        <segue destination="1Ge-wH-f6G" kind="show" id="M8K-JE-WXP"/>
+                                        <segue destination="1Ge-wH-f6G" kind="show" identifier="mapSegue" id="M8K-JE-WXP"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
@@ -805,7 +807,7 @@
         <image name="student_male" width="35" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hhf-gw-uys"/>
         <segue reference="0xi-ke-Rwi"/>
+        <segue reference="Hhf-gw-uys"/>
     </inferredMetricsTieBreakers>
 </document>

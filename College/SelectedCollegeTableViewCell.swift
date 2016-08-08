@@ -10,7 +10,7 @@ import UIKit
 
 class SelectedCollegeTableViewCell: UITableViewCell {
 
-
     @IBOutlet weak var collegeLocation: UILabel!
     @IBOutlet weak var collegeName: UILabel!
+    
 }

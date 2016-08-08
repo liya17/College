@@ -9,13 +9,29 @@
 import UIKit
 import SwiftyJSON
 
-class myListTableViewController: UITableViewController {
+class MyListTableViewController: UITableViewController {
+    
+    //array that is passed from DisplayCollegeViewController
+    //var array: [Colleges]!
+    var array: [String]!
     
     var college: Colleges!
     
+    //var selectedColleges = [String]()
+    
+    //var selectedColleges = [String]()
+    
+    let kUserDefault = NSUserDefaults.standardUserDefaults()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+       // print(college)
+       //print(array)
+        
+        //print(college)
+        
         navigationController?.navigationBar.barTintColor = UIColor.orangeColor()
         
         self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
@@ -26,15 +42,28 @@ class myListTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        guard let jsonURL = NSBundle.mainBundle().URLForResource("college", withExtension: "json") else {
-            print("Could not find json!")
-            return
+        // Do any additional setup after loading the view, typically from a nib.
+        guard let jsonURL = NSBundle.mainBundle().URLForResource("college", withExtension: "json")
+            else{
+                print("Could not find json!")
+                return
         }
         
-        let jsonData = NSData(contentsOfURL: jsonURL)!
-        let college = JSON(data: jsonData)
+//        let jsonData = NSData(contentsOfURL: jsonURL)!
+//        
+//        let selectedData = JSON(data:jsonData)
+//        
+//        let selectedCollegeData = selectedData.arrayValue
+//        
+//        selectedColleges = []
+//        
+//        selectedColleges.append(college.name)
+//        
+//        print(selectedColleges.count)
+//        tableView.reloadData()
+    
         
-        tableView.reloadData()
+        //NEED TO REMOVE COLLEGES THAT ARE NOT FILLED OUT
         
     }
 
@@ -59,7 +88,7 @@ class myListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCellWithIdentifier("selectedCollegeTableViewCell", forIndexPath: indexPath) as! SelectedCollegeTableViewCell
 
-       cell.collegeName.text = college.name    
+        cell.collegeName.text = college.name    
         cell.collegeLocation.text = college.stateAbbrev
 
 

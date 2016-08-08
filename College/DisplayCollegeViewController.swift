@@ -57,6 +57,10 @@ class DisplayCollegeViewController: UIViewController {
     
     var selectedColleges = [String]()
     
+    var otherArray = [String]()
+    
+    //let userDefaults = [String]()
+    
     let kUserDefault = NSUserDefaults.standardUserDefaults()
     
     
@@ -136,9 +140,9 @@ class DisplayCollegeViewController: UIViewController {
     @IBAction func heartButtonTapped(sender: AnyObject) {
        
         let prefs = NSUserDefaults.standardUserDefaults()
-            //prefs.removeObjectForKey("selectedColleges")
+        //prefs.removeObjectForKey("selectedColleges")
         if let userDefaults = prefs.objectForKey("selectedColleges") as? [String] {
-            var iheartcollege = prefs.objectForKey("selectedColleges") as! [String]
+        var iheartcollege = prefs.objectForKey("selectedColleges") as! [String]
             iheartcollege.append(currentCollege.unitId)
             prefs.setObject(iheartcollege, forKey: "selectedColleges")
         } else {
@@ -148,6 +152,7 @@ class DisplayCollegeViewController: UIViewController {
         
         let userDefaults = prefs.objectForKey("selectedColleges") as! [String]
         print("lol", userDefaults)
+
         
     }
     
@@ -163,8 +168,11 @@ class DisplayCollegeViewController: UIViewController {
         }
         
         if segue.identifier == "selectedCollege" {
-            let destinationVC = segue.destinationViewController as! myListTableViewController
+            let destinationVC = segue.destinationViewController as! MyListTableViewController
             destinationVC.college = currentCollege
+            //destinationVC.array = otherArray
+            
+            //print("willson" ,destinationVC.college)
         }
         
 //        if segue.identifier == "displayNote" {
@@ -172,10 +180,11 @@ class DisplayCollegeViewController: UIViewController {
 //
 //        }
         
-        if segue.identifier == "heartSegue" {
-            let destinationVC = segue.destinationViewController as! myListTableViewController
-            destinationVC.college = currentCollege
-        }
+//        if segue.identifier == "heartSegue" {
+//            let destinationVC = segue.destinationViewController as! MyListTableViewController
+//            destinationVC.college = currentCollege
+//            
+//        }
     }
     
     

@@ -30,6 +30,7 @@ class ViewController: UITableViewController {
             print("Could not find json!")
             return
         }
+        
         let jsonData = NSData(contentsOfURL: jsonURL)!
         let collegeData = JSON(data: jsonData)
         
@@ -53,7 +54,7 @@ class ViewController: UITableViewController {
         definesPresentationContext = true
         //tableView.tableHeaderView = searchController.searchBar
         
-        //self.navigationItem.titleView = searchController.searchBar
+//        self.navigationItem.titleView = searchController.searchBar
         
         searchController.hidesNavigationBarDuringPresentation = false
         
@@ -72,7 +73,9 @@ class ViewController: UITableViewController {
         searchController.searchBar.barTintColor = UIColor.whiteColor()
         searchController.searchBar.tintColor = UIColor.blackColor()
         searchController.searchBar.placeholder = "Search for a college..."
-
+        
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
