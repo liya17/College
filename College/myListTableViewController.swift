@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class myListTableViewController: UITableViewController {
-
+    
+    var college: Colleges!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,10 +21,21 @@ class myListTableViewController: UITableViewController {
         self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        guard let jsonURL = NSBundle.mainBundle().URLForResource("college", withExtension: "json") else {
+            print("Could not find json!")
+            return
+        }
+        
+        let jsonData = NSData(contentsOfURL: jsonURL)!
+        let college = JSON(data: jsonData)
+        
+        tableView.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,15 +55,16 @@ class myListTableViewController: UITableViewController {
         return 0
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+       let cell = tableView.dequeueReusableCellWithIdentifier("selectedCollegeTableViewCell", forIndexPath: indexPath) as! SelectedCollegeTableViewCell
 
-        // Configure the cell...
+       cell.collegeName.text = college.name    
+        cell.collegeLocation.text = college.stateAbbrev
+
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

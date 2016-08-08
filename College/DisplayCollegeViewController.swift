@@ -162,11 +162,20 @@ class DisplayCollegeViewController: UIViewController {
             destinationVC.college = currentCollege
         }
         
-//        if segue.identifier == "heartSegue" {
-//            for college in selectedColleges {
-//                print(selectedColleges.count)
-//            }
+        if segue.identifier == "selectedCollege" {
+            let destinationVC = segue.destinationViewController as! myListTableViewController
+            destinationVC.college = currentCollege
+        }
+        
+//        if segue.identifier == "displayNote" {
+//            let destinationVC = segue.destinationViewController as! DisplayNotesViewController
+//
 //        }
+        
+        if segue.identifier == "heartSegue" {
+            let destinationVC = segue.destinationViewController as! myListTableViewController
+            destinationVC.college = currentCollege
+        }
     }
     
     

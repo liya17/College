@@ -25,8 +25,6 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         //notes = RealmHelper.retrieveNotes() //wants to update the notes property every time the ListNotesViewController is loaded
-        
         // Do any additional setup after loading the view, typically from a nib.
         guard let jsonURL = NSBundle.mainBundle().URLForResource("college", withExtension: "json") else {
             print("Could not find json!")
@@ -59,7 +57,7 @@ class ViewController: UITableViewController {
         
         searchController.hidesNavigationBarDuringPresentation = false
         
-        navigationController?.navigationBar.barTintColor = UIColor.orangeColor()
+        navigationController?.navigationBar.barTintColor = UIColor(red: 240.0/255.0, green: 119.0/255.0, blue: 0.0/255.0, alpha: 1.0)
         
         navigationController?.navigationBar.tintColor = UIColor.whiteColor();
         
@@ -115,14 +113,6 @@ class ViewController: UITableViewController {
             if identifier == "displayNote" {
                 print("Table view cell tapped")
                 
-//                let indexPath = tableView.indexPathForSelectedRow! //uniquely identify each cell only using the row property of its corresponding index path --> use indexPath.row to retrieve the notes from the ntoes array that corresponds to the touched cell
-//                let note = notes[indexPath.row]
-//                let displayNoteViewController = segue.destinationViewController as! DisplayNotesViewController
-//                //destinationViewController --> get access to the Display Note View Controller
-//                
-//                displayNoteViewController.note = note
-//                //setting the note property of the Display Note View Controller to the corresponding to the cell that the user tapped
-                
             } else if identifier == "addNote" {
                 print("+ button tapped")
             }
@@ -136,19 +126,6 @@ class ViewController: UITableViewController {
         return collegesData.count
     }
     
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("collegeTableViewCell", forIndexPath: indexPath)
-//        let college: Colleges
-//        if searchController.active && searchController.searchBar.text != "" {
-//            college = filteredColleges[indexPath.row]
-//        } else {
-//            college = collegesData[indexPath.row]
-//        }
-//        cell.textLabel?.text = college.name
-//        cell.textLabel?.text = college.stateAbbrev
-//        return cell
-//    }
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // 1
         let cell = tableView.dequeueReusableCellWithIdentifier("collegeTableViewCell", forIndexPath: indexPath) as! CollegeTableViewCell
@@ -161,7 +138,6 @@ class ViewController: UITableViewController {
         }
         
         // 2
-        //let college = self.collegesData![indexPath.row]
         cell.collegeNameLabel.text = college.name
         cell.locationLabel.text = college.stateAbbrev
         
