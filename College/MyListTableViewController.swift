@@ -17,20 +17,45 @@ class MyListTableViewController: UITableViewController {
     
     var college: Colleges!
     
-    //var selectedColleges = [String]()
+    var myArray: [NSUserDefaults] = []
     
     //var selectedColleges = [String]()
     
-    let kUserDefault = NSUserDefaults.standardUserDefaults()
+    //var selectedColleges = [String]()
+    
+    //let kUserDefault = NSUserDefaults.standardUserDefaults()
 
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
         
-        print(NSUserDefaults.standardUserDefaults())
+        tableView.delegate = self
         
-       // print(college)
-       //print(array)
+//        print("aksjdlfkaj", NSUserDefaults.standardUserDefaults().dictionaryRepresentation().values)
+//        
+//        let test = NSUserDefaults .standardUserDefaults () .objectForKey ( "selectedColleges" )
+//        print( "We saved this data: \( test )" )
+//        
+//        let tabledata = NSUserDefaults.standardUserDefaults().objectForKey("selectedColleges")
+//        
+//        print("ok ladies: ", tabledata)
+//        
+//        myArray = [tabledata! as! NSUserDefaults]
+//        
+//        print(myArray.count)
+//        print(myArray)
+//        tableView.reloadData()
+        
+        //        NSUserDefaults.standardUserDefaults().setObject(array, forKey: "selectedColleges")
+        //
+        //        let tabledata = NSUserDefaults.standardUserDefaults().objectForKey("selectedColleges")
+        
+        //array = [tabledata! as! String]
+        //tableView.reloadData()
+        
+        //        print(tabledata)
+        
+        // print(college)
+        //print(array)
         
         //print(college)
         
@@ -40,7 +65,7 @@ class MyListTableViewController: UITableViewController {
         
         // Uncomment the following line to preserve selection between presentations
         self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
@@ -50,6 +75,75 @@ class MyListTableViewController: UITableViewController {
                 print("Could not find json!")
                 return
         }
+        
+        
+        //        let jsonData = NSData(contentsOfURL: jsonURL)!
+        //
+        //        let selectedData = JSON(data:jsonData)
+        //
+        //        let selectedCollegeData = selectedData.arrayValue
+        //
+        //        selectedColleges = []
+        //
+        //        selectedColleges.append(college.name)
+        //
+        //        print(selectedColleges.count)
+        //        tableView.reloadData()
+        
+        
+        //NEED TO REMOVE COLLEGES THAT ARE NOT FILLED OUT
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        
+//        tableView.delegate = self
+//        
+//    print("aksjdlfkaj", NSUserDefaults.standardUserDefaults().dictionaryRepresentation().values)
+//        
+//        let test = NSUserDefaults .standardUserDefaults () .objectForKey ( "selectedColleges" )
+//        print( "We saved this data: \( test )" )
+//        
+//        let tabledata = NSUserDefaults.standardUserDefaults().objectForKey("selectedColleges")
+//        
+//        //myArray = [tabledata!]
+//        //myArray = tabledata
+//        
+//        print(myArray.count)
+//        print(myArray)
+//        tableView.reloadData()
+//
+//        NSUserDefaults.standardUserDefaults().setObject(array, forKey: "selectedColleges")
+//
+//        let tabledata = NSUserDefaults.standardUserDefaults().objectForKey("selectedColleges")
+//        
+//        //array = [tabledata! as! String]
+//        //tableView.reloadData()
+//        
+//        print(tabledata)
+//
+//       // print(college)
+//       //print(array)
+//        
+//        //print(college)
+//        
+//        navigationController?.navigationBar.barTintColor = UIColor.orangeColor()
+//        
+//        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+//        
+//        // Uncomment the following line to preserve selection between presentations
+//        self.clearsSelectionOnViewWillAppear = false
+//
+//        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+//        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+//        
+//        // Do any additional setup after loading the view, typically from a nib.
+//        guard let jsonURL = NSBundle.mainBundle().URLForResource("college", withExtension: "json")
+//            else{
+//                print("Could not find json!")
+//                return
+//        }
+        
         
 //        let jsonData = NSData(contentsOfURL: jsonURL)!
 //        
@@ -78,21 +172,32 @@ class MyListTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return myArray.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        
        let cell = tableView.dequeueReusableCellWithIdentifier("selectedCollegeTableViewCell", forIndexPath: indexPath) as! SelectedCollegeTableViewCell
+        
+        let row = indexPath.row
+        
+        let colUnitID = myArray[row]
+        
+        cell.collegeName.text = (colUnitID as! String)
+        
+        //cell.collegeName.text = "lol"
 
-        cell.collegeName.text = college.name    
-        cell.collegeLocation.text = college.stateAbbrev
-
+//        cell.collegeName.text = college.name    
+//        cell.collegeLocation.text = college.stateAbbrev
+        
+        //cell.collegeName.text = "hey"
 
         return cell
     }

@@ -87,55 +87,52 @@
             <point key="canvasLocation" x="1910.5" y="-19.5"/>
         </scene>
         <!--My List Table View Controller-->
-        <scene sceneID="6cK-kC-62z">
+        <scene sceneID="fwx-ZQ-MXJ">
             <objects>
-                <tableViewController id="5Gv-G4-mU7" customClass="MyListTableViewController" customModule="College" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" id="ic7-cE-67S">
+                <tableViewController id="djj-VY-uiU" customClass="MyListTableViewController" customModule="College" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" id="XPb-za-cEO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="selectedCollegeTableViewCell" rowHeight="125" id="dP2-BM-f3m" customClass="SelectedCollegeTableViewCell" customModule="College" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fi8-u7-ZHQ" customClass="SelectedCollegeTableViewCell" customModule="College" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dP2-BM-f3m" id="s19-s0-7aI">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fi8-u7-ZHQ" id="oNe-wW-v2X">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="College Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIJ-Ra-vL0">
-                                            <rect key="frame" x="44" y="41" width="286" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5V-rn-7pI">
+                                            <rect key="frame" x="166" y="66" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="College Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trF-fa-xPg">
-                                            <rect key="frame" x="57" y="64" width="261" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HEYYYYY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glJ-uN-2fK">
+                                            <rect key="frame" x="149" y="24" width="76" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="collegeLocation" destination="trF-fa-xPg" id="mYB-tD-jIL"/>
-                                    <outlet property="collegeName" destination="HIJ-Ra-vL0" id="CNp-l5-o2a"/>
-                                    <outlet property="selectedCollegeLocation" destination="trF-fa-xPg" id="svC-6G-V0H"/>
-                                    <outlet property="selectedCollegeName" destination="HIJ-Ra-vL0" id="r1M-PU-Y2B"/>
-                                    <segue destination="gPF-gs-cbl" kind="show" id="JSD-5C-WGA"/>
+                                    <outlet property="collegeLocation" destination="S5V-rn-7pI" id="QHU-Fh-F8W"/>
+                                    <outlet property="collegeName" destination="glJ-uN-2fK" id="Qxv-cB-KIH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="5Gv-G4-mU7" id="rSq-xz-jrF"/>
-                            <outlet property="delegate" destination="5Gv-G4-mU7" id="xcu-LQ-oHH"/>
+                            <outlet property="dataSource" destination="djj-VY-uiU" id="BES-Ty-gTZ"/>
+                            <outlet property="delegate" destination="djj-VY-uiU" id="VWf-q1-CyV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="gWZ-AU-PKz"/>
+                    <navigationItem key="navigationItem" id="Q1m-uE-In6"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A53-Ca-ZRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BN8-GA-06Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1910.5" y="773.5"/>
+            <point key="canvasLocation" x="1910.5" y="698.5"/>
         </scene>
         <!--College Map View Controller-->
         <scene sceneID="IlA-4A-GF1">
@@ -168,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eUZ-iS-Xn5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2937.5" y="759.5"/>
+            <point key="canvasLocation" x="4111.5" y="759.5"/>
         </scene>
         <!--Display College View Controller-->
         <scene sceneID="6he-Rf-JHs">
@@ -375,37 +372,37 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" translatesAutoresizingMaskIntoConstraints="NO" id="ZEI-v4-alI">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="ZEI-v4-alI">
                                                 <rect key="frame" x="20" y="413" width="335" height="67"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="67" id="SFM-gt-ELX"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" translatesAutoresizingMaskIntoConstraints="NO" id="1CQ-6w-yqk">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="1CQ-6w-yqk">
                                                 <rect key="frame" x="20" y="544" width="335" height="67"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="67" id="qNl-f8-o4n"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" translatesAutoresizingMaskIntoConstraints="NO" id="PTu-lK-hX4">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="PTu-lK-hX4">
                                                 <rect key="frame" x="20" y="675" width="335" height="67"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="67" id="wZP-Kx-zFV"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" translatesAutoresizingMaskIntoConstraints="NO" id="Hxk-fY-HAH">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="Hxk-fY-HAH">
                                                 <rect key="frame" x="20" y="806" width="335" height="67"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="67" id="KJI-lp-P0c"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" translatesAutoresizingMaskIntoConstraints="NO" id="c67-L0-Xn7">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="c67-L0-Xn7">
                                                 <rect key="frame" x="20" y="937" width="335" height="67"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="67" id="Eyg-yf-MD6"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" translatesAutoresizingMaskIntoConstraints="NO" id="LQ3-p2-by2">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" translatesAutoresizingMaskIntoConstraints="NO" id="LQ3-p2-by2">
                                                 <rect key="frame" x="20" y="1068" width="335" height="67"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="67" id="JQT-Jc-eoi"/>
@@ -662,7 +659,7 @@
                                     <state key="selected" image="Shape"/>
                                     <connections>
                                         <action selector="heartButtonTapped:" destination="gPF-gs-cbl" eventType="touchUpInside" id="oO1-b6-P1h"/>
-                                        <segue destination="5Gv-G4-mU7" kind="show" identifier="selectedCollege" id="0xi-ke-Rwi"/>
+                                        <segue destination="djj-VY-uiU" kind="show" identifier="selectedCollege" id="DUT-Mj-Al6"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
@@ -706,7 +703,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAG-Fh-E2D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2390.5" y="-117"/>
+            <point key="canvasLocation" x="2370.5" y="225"/>
         </scene>
         <!--Notes-->
         <scene sceneID="zPN-vV-HaB">
@@ -839,7 +836,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="b4f-6Z-3Fm" kind="relationship" relationship="viewControllers" id="Hiu-P7-aB1"/>
-                        <segue destination="wCJ-JK-laE" kind="relationship" relationship="viewControllers" id="3Dw-gk-Zpj"/>
+                        <segue destination="ugZ-Y6-P3Y" kind="relationship" relationship="viewControllers" id="kxb-Iu-ZhJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7EG-zx-Tda" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -863,39 +860,38 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2r-rd-wvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1475.5" y="-19.5"/>
+            <point key="canvasLocation" x="1475.5" y="-9.5"/>
         </scene>
-        <!--My List-->
-        <scene sceneID="zyr-gE-If9">
+        <!--Item-->
+        <scene sceneID="dln-D9-wnK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wCJ-JK-laE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My List" image="hearts" id="uxz-VI-J1V"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ugZ-Y6-P3Y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="dcm-Ya-huA"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1QH-ao-rNL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hZ8-Pg-8Sv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="5Gv-G4-mU7" kind="relationship" relationship="rootViewController" id="tkP-SX-Lwz"/>
+                        <segue destination="djj-VY-uiU" kind="relationship" relationship="rootViewController" id="ujb-11-o9B"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CUQ-U5-owt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ZN-xW-4Cj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1475.5" y="773.5"/>
+            <point key="canvasLocation" x="1459.5" y="698.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="EditButton" width="26" height="25"/>
-        <image name="Group" width="107" height="19"/>
         <image name="Shape" width="20" height="17"/>
+        <image name="bar" width="107" height="19"/>
         <image name="hearts" width="26" height="25"/>
         <image name="map_marker" width="12" height="12"/>
         <image name="student_male" width="35" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hhf-gw-uys"/>
-        <segue reference="0xi-ke-Rwi"/>
         <segue reference="mil-AS-T35"/>
+        <segue reference="ujb-11-o9B"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -175,6 +175,8 @@ class DisplayCollegeViewController: UIViewController {
             //print("willson" ,destinationVC.college)
         }
         
+        
+        
 //        if segue.identifier == "displayNote" {
 //            let destinationVC = segue.destinationViewController as! ListNotesTableViewController
 //        }

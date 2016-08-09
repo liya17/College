@@ -12,5 +12,6 @@ import RealmSwift
 class Note: Object {
     dynamic var title = ""
     dynamic var content = ""
+    dynamic var college = ""
     dynamic var modificationTime = NSDate()
 }

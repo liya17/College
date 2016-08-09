@@ -37,6 +37,10 @@ class RealmHelper {
     static func retrieveNotes() -> Results<Note> {
         let realm = try! Realm()
         return realm.objects(Note).sorted("modificationTime", ascending: false)
+        
+        //filter through colleges to find the college that matches the \(College.name)
     }
+    
+    
 }
 

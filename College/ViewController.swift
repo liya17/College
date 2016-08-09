@@ -40,7 +40,6 @@ class ViewController: UITableViewController {
                 
         for college in allCollegesData {
             let currentCollege = Colleges(json: college)
-            //add struct into movies array
             collegesData.append(currentCollege)
         }
         
@@ -97,6 +96,9 @@ class ViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // 1
+        
+
+        
         if let identifier = segue.identifier {
             // 2
             if identifier == "displayCollege" {
