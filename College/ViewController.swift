@@ -102,12 +102,19 @@ class ViewController: UITableViewController {
             if identifier == "displayCollege" {
                 // 3
                 // pass information
-
+                var college: Colleges
+                if searchController.active {
+//                & searchController.searchBar.text != "" {
+                    college = filteredColleges[(tableView.indexPathForSelectedRow?.row)!]
+                }
+                else {
+                    college = collegesData[(tableView.indexPathForSelectedRow?.row)!]
+                }
                 print("Transitioning to the Display College View Controller")
                 
                 let destinationViewController = segue.destinationViewController as! DisplayCollegeViewController
                 
-                destinationViewController.currentCollege = collegesData[(tableView.indexPathForSelectedRow?.row)!]
+                destinationViewController.currentCollege = college
 
             }
         }

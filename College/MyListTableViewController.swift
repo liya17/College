@@ -27,6 +27,8 @@ class MyListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(NSUserDefaults.standardUserDefaults())
+        
        // print(college)
        //print(array)
         
