@@ -58,7 +58,7 @@ class ViewController: UITableViewController {
         
         searchController.hidesNavigationBarDuringPresentation = false
         
-        navigationController?.navigationBar.barTintColor = UIColor(red: 240.0/255.0, green: 119.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 255.0/255.0, green: 168.0/255.0, blue: 18.0/255.0, alpha: 1.0)
         
         navigationController?.navigationBar.tintColor = UIColor.whiteColor();
         

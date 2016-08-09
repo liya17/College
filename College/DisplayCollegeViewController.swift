@@ -176,8 +176,7 @@ class DisplayCollegeViewController: UIViewController {
         }
         
 //        if segue.identifier == "displayNote" {
-//            let destinationVC = segue.destinationViewController as! DisplayNotesViewController
-//
+//            let destinationVC = segue.destinationViewController as! ListNotesTableViewController
 //        }
         
 //        if segue.identifier == "heartSegue" {
