@@ -58,9 +58,13 @@ class DisplayCollegeViewController: UIViewController {
     
     var selectedColleges = [String]()
     
+    var selectedLocation = [String]()
+    
     var otherArray = [String]()
     
     var notes: Results<Note>!
+    
+    //var college: Colleges!
     
     //let userDefaults = [String]()
     
@@ -69,6 +73,8 @@ class DisplayCollegeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //college = currentCollege
         
         guard let jsonURL = NSBundle.mainBundle().URLForResource("college", withExtension: "json")
             else{
@@ -83,6 +89,8 @@ class DisplayCollegeViewController: UIViewController {
         let selectedCollegeData = selectedData.arrayValue
         
         selectedColleges = []
+        
+        selectedLocation = []
 
         
     }
@@ -140,21 +148,36 @@ class DisplayCollegeViewController: UIViewController {
     // ADD COLLEGE TO MYLIST
     @IBAction func heartButtonTapped(sender: AnyObject) {
        
+        //COLLEGE NAME
         let prefs = NSUserDefaults.standardUserDefaults()
         //prefs.removeObjectForKey("selectedColleges")
         if let userDefaults = prefs.objectForKey("selectedColleges") as? [String] {
         var iheartcollege = prefs.objectForKey("selectedColleges") as! [String]
-            iheartcollege.append(currentCollege.unitId)
+            iheartcollege.append(currentCollege.name)
             prefs.setObject(iheartcollege, forKey: "selectedColleges")
         } else {
-            selectedColleges.append(currentCollege.unitId)
+            selectedColleges.append(currentCollege.name)
             prefs.setObject(selectedColleges, forKey: "selectedColleges")
         }
         
         let userDefaults = prefs.objectForKey("selectedColleges") as! [String]
         print("lol", userDefaults)
-
         
+        
+        //COLLEGE LOCATION
+        let other = NSUserDefaults.standardUserDefaults()
+        //other.removeObjectForKey("selectedLocation")
+        if let otherDefault = other.objectForKey("selectedLocation") as? [String] {
+            var loc = other.objectForKey("selectedLocation") as! [String]
+            loc.append(currentCollege.stateAbbrev)
+            other.setObject(loc, forKey: "selectedLocation")
+        } else {
+            selectedLocation.append(currentCollege.stateAbbrev)
+            other.setObject(selectedLocation, forKey: "selectedLocation")
+        }
+        
+        let otherDefault = other.objectForKey("selectedLocation") as! [String]
+        print("lol", otherDefault)
     }
     
     override func didReceiveMemoryWarning() {

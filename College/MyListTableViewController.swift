@@ -13,13 +13,15 @@ class MyListTableViewController: UITableViewController {
     
     //array that is passed from DisplayCollegeViewController
     //var array: [Colleges]!
-    var array: [String]!
+    var array = []
     
     var college: Colleges!
     
     var myArray = []
     
-    var defaults = NSUserDefaults.standardUserDefaults()
+    var collegeDefaults = NSUserDefaults.standardUserDefaults().objectForKey("selectedColleges") as? [String] ?? [String]()
+    
+    var locationDefaults = NSUserDefaults.standardUserDefaults().objectForKey("selectedLocation") as? [String] ?? [String]()
     
     var ourText = String()
     
@@ -45,9 +47,12 @@ class MyListTableViewController: UITableViewController {
         
 //        print("aksjdlfkaj", NSUserDefaults.standardUserDefaults().dictionaryRepresentation().values)
 //        
-//        let test = NSUserDefaults .standardUserDefaults () .objectForKey ( "selectedColleges" )
-//        print( "We saved this data: \( test )" )
-//        
+        //let test = NSUserDefaults .standardUserDefaults () .objectForKey ( "selectedColleges" )
+        //print( "We saved this data: \( test )" )
+        
+        //self.array = [test]
+        //print(array)
+//
 //        let tabledata = NSUserDefaults.standardUserDefaults().objectForKey("selectedColleges")
 //        
 //        print("ok ladies: ", tabledata)
@@ -72,7 +77,7 @@ class MyListTableViewController: UITableViewController {
         
         //print(college)
         
-        navigationController?.navigationBar.barTintColor = UIColor.orangeColor()
+        //navigationController?.navigationBar.barTintColor = UIColor.orangeColor()
         
         self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
@@ -197,7 +202,7 @@ class MyListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5 //myArray.count
+        return  collegeDefaults.count
     }
 
     
@@ -212,14 +217,23 @@ class MyListTableViewController: UITableViewController {
         
 //        cell.collegeName.text = (colUnitID as! String)
         
-        cell.collegeName.text = "lol"
-
+        //cell.collegeName.text = "hi5"
+        cell.collegeName.text = collegeDefaults[indexPath.row]
+        cell.collegeLocation.text = locationDefaults[indexPath.row]
 //        cell.collegeName.text = college.name    
 //        cell.collegeLocation.text = college.stateAbbrev
-        
+        //print(collegeDefaults)
         //cell.collegeName?.text = textArray[indexPath.row]
 
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "favCollege" {
+            let destinationVC = segue.destinationViewController as! DisplayCollegeViewController
+            destinationVC.currentCollege = college
+            
+        }
     }
 
     /*

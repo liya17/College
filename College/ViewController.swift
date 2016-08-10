@@ -69,12 +69,12 @@ class ViewController: UITableViewController {
         
         self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
-        UITabBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 240.0/255.0, blue: 203.0/255.0, alpha: 1.0)
+        //UITabBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 240.0/255.0, blue: 203.0/255.0, alpha: 1.0)
         
         //        let tableHeaderView: UIView = UIView.init(frame: searchController.searchBar.frame)
         //        tableHeaderView.addSubview(searchController.searchBar)
         //        self.tableView.tableHeaderView = tableHeaderView
-        
+    
         searchController.searchBar.barTintColor = UIColor.whiteColor()
         searchController.searchBar.tintColor = UIColor.blackColor()
         searchController.searchBar.placeholder = "Search for a college..."
@@ -148,9 +148,6 @@ class ViewController: UITableViewController {
         
         return cell
         
-        dispatch_async(dispatch_get_main_queue(),{
-            self.performSegueWithIdentifier("displayCollege",sender: self)
-        })
     }
     
     
