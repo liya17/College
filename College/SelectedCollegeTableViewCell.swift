@@ -11,6 +11,6 @@ import UIKit
 class SelectedCollegeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collegeName: UILabel!
-    
-    @IBOutlet weak var collegeLocation: UILabel!
+
+    @IBOutlet weak var collegeLabel: UILabel!
 }

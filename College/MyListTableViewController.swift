@@ -17,7 +17,13 @@ class MyListTableViewController: UITableViewController {
     
     var college: Colleges!
     
-    var myArray: [NSUserDefaults] = []
+    var myArray = []
+    
+    var defaults = NSUserDefaults.standardUserDefaults()
+    
+    var ourText = String()
+    
+    var textArray:[String] = [String]()
     
     //var selectedColleges = [String]()
     
@@ -28,7 +34,14 @@ class MyListTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        tableView.delegate = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor();
+
+        
+//        ourText = defaults.objectForKey("selectedColleges")! as! String
+//        textArray.append(ourText)
         
 //        print("aksjdlfkaj", NSUserDefaults.standardUserDefaults().dictionaryRepresentation().values)
 //        
@@ -38,13 +51,13 @@ class MyListTableViewController: UITableViewController {
 //        let tabledata = NSUserDefaults.standardUserDefaults().objectForKey("selectedColleges")
 //        
 //        print("ok ladies: ", tabledata)
-//        
-//        myArray = [tabledata! as! NSUserDefaults]
-//        
+//
+//        myArray = [tabledata!]
+//
 //        print(myArray.count)
 //        print(myArray)
 //        tableView.reloadData()
-        
+
         //        NSUserDefaults.standardUserDefaults().setObject(array, forKey: "selectedColleges")
         //
         //        let tabledata = NSUserDefaults.standardUserDefaults().objectForKey("selectedColleges")
@@ -70,11 +83,13 @@ class MyListTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // Do any additional setup after loading the view, typically from a nib.
-        guard let jsonURL = NSBundle.mainBundle().URLForResource("college", withExtension: "json")
-            else{
-                print("Could not find json!")
-                return
-        }
+        
+    //REDO
+//        guard let jsonURL = NSBundle.mainBundle().URLForResource("college", withExtension: "json")
+//            else{
+//                print("Could not find json!")
+//                return
+//        }
         
         
         //        let jsonData = NSData(contentsOfURL: jsonURL)!
@@ -96,6 +111,11 @@ class MyListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 255.0/255.0, green: 168.0/255.0, blue: 18.0/255.0, alpha: 1.0)
+        
+        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+
 //        
 //        tableView.delegate = self
 //        
@@ -177,7 +197,7 @@ class MyListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return myArray.count
+        return 5 //myArray.count
     }
 
     
@@ -186,18 +206,18 @@ class MyListTableViewController: UITableViewController {
         
        let cell = tableView.dequeueReusableCellWithIdentifier("selectedCollegeTableViewCell", forIndexPath: indexPath) as! SelectedCollegeTableViewCell
         
-        let row = indexPath.row
+//        let row = indexPath.row
+//        
+//        let colUnitID = myArray[row]
         
-        let colUnitID = myArray[row]
+//        cell.collegeName.text = (colUnitID as! String)
         
-        cell.collegeName.text = (colUnitID as! String)
-        
-        //cell.collegeName.text = "lol"
+        cell.collegeName.text = "lol"
 
 //        cell.collegeName.text = college.name    
 //        cell.collegeLocation.text = college.stateAbbrev
         
-        //cell.collegeName.text = "hey"
+        //cell.collegeName?.text = textArray[indexPath.row]
 
         return cell
     }

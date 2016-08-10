@@ -20,6 +20,14 @@ class ListNotesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         notes = RealmHelper.retrieveNotes()
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 255.0/255.0, green: 168.0/255.0, blue: 18.0/255.0, alpha: 1.0)
+        
+        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor();
+
+
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

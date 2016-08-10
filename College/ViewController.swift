@@ -40,20 +40,26 @@ class ViewController: UITableViewController {
                 
         for college in allCollegesData {
             let currentCollege = Colleges(json: college)
-            collegesData.append(currentCollege)
+            if currentCollege.actCom25 != "" {
+                collegesData.append(currentCollege)
+            }
         }
-        
-        //NEED TO REMOVE COLLEGES THAT ARE NOT FILLED OUT
-        
+                
         print(collegesData!.count)
         tableView.reloadData()
+    
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
-        //tableView.tableHeaderView = searchController.searchBar
+        tableView.tableHeaderView = searchController.searchBar
         
-//        self.navigationItem.titleView = searchController.searchBar
+        //        self.navigationItem.titleView = searchController.searchBar
         
         searchController.hidesNavigationBarDuringPresentation = false
         
@@ -65,20 +71,16 @@ class ViewController: UITableViewController {
         
         UITabBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 240.0/255.0, blue: 203.0/255.0, alpha: 1.0)
         
-        let tableHeaderView: UIView = UIView.init(frame: searchController.searchBar.frame)
-        tableHeaderView.addSubview(searchController.searchBar)
-        self.tableView.tableHeaderView = tableHeaderView
-    
+        //        let tableHeaderView: UIView = UIView.init(frame: searchController.searchBar.frame)
+        //        tableHeaderView.addSubview(searchController.searchBar)
+        //        self.tableView.tableHeaderView = tableHeaderView
+        
         searchController.searchBar.barTintColor = UIColor.whiteColor()
         searchController.searchBar.tintColor = UIColor.blackColor()
         searchController.searchBar.placeholder = "Search for a college..."
         
         
-        
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -94,11 +96,10 @@ class ViewController: UITableViewController {
         searchController.searchBar.frame = searchBarFrame
     }
     
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // 1
-        
-
-        
         if let identifier = segue.identifier {
             // 2
             if identifier == "displayCollege" {
@@ -117,19 +118,11 @@ class ViewController: UITableViewController {
                 let destinationViewController = segue.destinationViewController as! DisplayCollegeViewController
                 
                 destinationViewController.currentCollege = college
-
-            }
-        }
-        
-        if let identifier = segue.identifier {
-            if identifier == "displayNote" {
-                print("Table view cell tapped")
-                
-            } else if identifier == "addNote" {
-                print("+ button tapped")
             }
         }
     }
+    
+    
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.active && searchController.searchBar.text != "" {
@@ -154,6 +147,10 @@ class ViewController: UITableViewController {
         cell.locationLabel.text = college.stateAbbrev
         
         return cell
+        
+        dispatch_async(dispatch_get_main_queue(),{
+            self.performSegueWithIdentifier("displayCollege",sender: self)
+        })
     }
     
     
@@ -168,9 +165,7 @@ class ViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
+   
 }
 
 extension ViewController: UISearchResultsUpdating {

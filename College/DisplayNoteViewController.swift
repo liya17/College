@@ -13,9 +13,23 @@ class DisplayNoteViewController: UIViewController {
     
     var note: Note?
     
+    var college: Colleges!
+    
     @IBOutlet weak var noteTitleTextField: UITextField!
     
     @IBOutlet weak var noteContentTextView: UITextView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 255.0/255.0, green: 168.0/255.0, blue: 18.0/255.0, alpha: 1.0)
+        
+        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor();
+
+
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,7 +41,7 @@ class DisplayNoteViewController: UIViewController {
         } else {
             // 3
             noteTitleTextField.text = ""
-            noteContentTextView.text = ""
+            noteContentTextView.text = "start typing..."
         }
     }
     
@@ -46,9 +60,9 @@ class DisplayNoteViewController: UIViewController {
                 let note = Note()
                 note.title = noteTitleTextField.text ?? ""
                 note.content = noteContentTextView.text ?? ""
-                note.modificationTime = NSDate()
-                // 2
+                                // 2
                 RealmHelper.addNote(note)
+                
             }
             // 3
             listNotesTableViewController.notes = RealmHelper.retrieveNotes()

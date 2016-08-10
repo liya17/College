@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import RealmSwift
 
 class DisplayCollegeViewController: UIViewController {
 
@@ -59,6 +60,8 @@ class DisplayCollegeViewController: UIViewController {
     
     var otherArray = [String]()
     
+    var notes: Results<Note>!
+    
     //let userDefaults = [String]()
     
     let kUserDefault = NSUserDefaults.standardUserDefaults()
@@ -98,13 +101,11 @@ class DisplayCollegeViewController: UIViewController {
         
         stateLabel.text = currentCollege.stateAbbrev
         
-        inStateLabel.text = currentCollege.inStatePrice
+        inStateLabel.text = "$" + currentCollege.inStatePrice
         
-        outStateLabel.text = currentCollege.outStatePrice
+        outStateLabel.text = "$" + currentCollege.outStatePrice
         
         financialAidLabel.text = currentCollege.financialAid
-        
-        //percentAdmitLabel.text = currentCollege.percentAdmitted
         
         totalAppLabel.text = currentCollege.applicantsTotal
         
@@ -175,7 +176,10 @@ class DisplayCollegeViewController: UIViewController {
             //print("willson" ,destinationVC.college)
         }
         
-        
+        if segue.identifier == "collegeNote" {
+            let destinationVC = segue.destinationViewController as! DisplayNoteViewController
+            destinationVC.college = currentCollege
+        }
         
 //        if segue.identifier == "displayNote" {
 //            let destinationVC = segue.destinationViewController as! ListNotesTableViewController

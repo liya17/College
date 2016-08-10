@@ -38,6 +38,10 @@ class RealmHelper {
         let realm = try! Realm()
         return realm.objects(Note).sorted("modificationTime", ascending: false)
         
+//        let realm = try! Realm()
+//        let result = realm.objects(Colleges).filter("\(college.name) = 'special'")
+//        print(result)
+//        
         //filter through colleges to find the college that matches the \(College.name)
     }
     
