@@ -13,16 +13,13 @@ import RealmSwift
 class MyListTableViewController: UITableViewController {
     
     //array that is passed from DisplayCollegeViewController
-    //var array: [Colleges]!
     var array = []
     
     var college: Colleges!
     
     var myArray = []
     
-    var collegeDefaults = NSUserDefaults.standardUserDefaults().objectForKey("selectedColleges") as? [String] ?? [String]()
-    
-    //var locationDefaults = NSUserDefaults.standardUserDefaults().objectForKey("selectedLocation") as? [String] ?? [String]()
+    //var collegeDefaults = NSUserDefaults.standardUserDefaults().objectForKey("selectedColleges") as? [String] ?? [String]()
     
     var ourText = String()
     
@@ -33,12 +30,6 @@ class MyListTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-    
-    //var selectedColleges = [String]()
-    
-    //var selectedColleges = [String]()
-    
-    //let kUserDefault = NSUserDefaults.standardUserDefaults()
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
@@ -97,7 +88,7 @@ class MyListTableViewController: UITableViewController {
         self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -124,6 +115,8 @@ class MyListTableViewController: UITableViewController {
         
         
         //NEED TO REMOVE COLLEGES THAT ARE NOT FILLED OUT
+        
+        self.colleges = RealmHelper.retrieveColleges()
     }
     
     override func viewDidLoad() {
@@ -248,18 +241,25 @@ class MyListTableViewController: UITableViewController {
         return cell
     }
     
-    func update() {
-        dispatch_async(dispatch_get_main_queue()) {
-            self.tableView.reloadData()
-        }
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "favCollege" {
             let destinationVC = segue.destinationViewController as! DisplayCollegeViewController
+            
+            college = colleges[(tableView.indexPathForSelectedRow?.row)!]
             destinationVC.currentCollege = college
         }
     }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        // 2
+        if editingStyle == .Delete {
+            //1
+            RealmHelper.deleteColleges(colleges[indexPath.row])
+            //2
+            colleges = RealmHelper.retrieveColleges()
+        }
+    }
+
 
     /*
     // Override to support conditional editing of the table view.

@@ -47,12 +47,6 @@ class ViewController: UITableViewController {
                 
         print(collegesData!.count)
         tableView.reloadData()
-    
-        
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
@@ -62,6 +56,12 @@ class ViewController: UITableViewController {
         //        self.navigationItem.titleView = searchController.searchBar
         
         searchController.hidesNavigationBarDuringPresentation = false
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
+       
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 255.0/255.0, green: 168.0/255.0, blue: 18.0/255.0, alpha: 1.0)
         
@@ -148,7 +148,6 @@ class ViewController: UITableViewController {
         cell.locationLabel.text = college.stateAbbrev
         
         return cell
-        
     }
     
     

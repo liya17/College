@@ -25,6 +25,13 @@ class RealmHelper {
         }
     }
     
+    static func deleteColleges(college: Colleges){
+        let realm = try! Realm()
+        try! realm.write(){
+            realm.delete(college)
+        }
+    }
+    
     static func deleteNote(note: Note){
         let realm = try! Realm()
         try! realm.write(){
