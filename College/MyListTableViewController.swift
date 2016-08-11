@@ -21,7 +21,7 @@ class MyListTableViewController: UITableViewController {
     
     var collegeDefaults = NSUserDefaults.standardUserDefaults().objectForKey("selectedColleges") as? [String] ?? [String]()
     
-    var locationDefaults = NSUserDefaults.standardUserDefaults().objectForKey("selectedLocation") as? [String] ?? [String]()
+    //var locationDefaults = NSUserDefaults.standardUserDefaults().objectForKey("selectedLocation") as? [String] ?? [String]()
     
     var ourText = String()
     
@@ -40,6 +40,10 @@ class MyListTableViewController: UITableViewController {
         self.tableView.dataSource = self
         
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor();
+        
+//        NSUserDefaults.standardUserDefaults().objectForKey("selectedColleges") as? [String] ?? [String]()
+        
+        tableView.reloadData()
 
         
 //        ourText = defaults.objectForKey("selectedColleges")! as! String
@@ -120,8 +124,12 @@ class MyListTableViewController: UITableViewController {
         navigationController?.navigationBar.barTintColor = UIColor(red: 255.0/255.0, green: 168.0/255.0, blue: 18.0/255.0, alpha: 1.0)
         
         self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
+        NSUserDefaults.standardUserDefaults().objectForKey("selectedColleges") as? [String] ?? [String]()
+        
+        tableView.reloadData()
 
-//        
+//
 //        tableView.delegate = self
 //        
 //    print("aksjdlfkaj", NSUserDefaults.standardUserDefaults().dictionaryRepresentation().values)
@@ -219,7 +227,7 @@ class MyListTableViewController: UITableViewController {
         
         //cell.collegeName.text = "hi5"
         cell.collegeName.text = collegeDefaults[indexPath.row]
-        cell.collegeLocation.text = locationDefaults[indexPath.row]
+        //cell.collegeLocation.text = locationDefaults[indexPath.row]
 //        cell.collegeName.text = college.name    
 //        cell.collegeLocation.text = college.stateAbbrev
         //print(collegeDefaults)
@@ -228,11 +236,16 @@ class MyListTableViewController: UITableViewController {
         return cell
     }
     
+    func update() {
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tableView.reloadData()
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "favCollege" {
             let destinationVC = segue.destinationViewController as! DisplayCollegeViewController
             destinationVC.currentCollege = college
-            
         }
     }
 

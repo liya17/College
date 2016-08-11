@@ -151,12 +151,17 @@ class DisplayCollegeViewController: UIViewController {
         //COLLEGE NAME
         let prefs = NSUserDefaults.standardUserDefaults()
         //prefs.removeObjectForKey("selectedColleges")
-        if let userDefaults = prefs.objectForKey("selectedColleges") as? [String] {
+        if (prefs.objectForKey("selectedColleges") as? [String]) != nil {
         var iheartcollege = prefs.objectForKey("selectedColleges") as! [String]
-            iheartcollege.append(currentCollege.name)
+            //heartButton.enabled = false
+            if !iheartcollege.contains(currentCollege.name) {
+                iheartcollege.append(currentCollege.name)
+            }
             prefs.setObject(iheartcollege, forKey: "selectedColleges")
         } else {
-            selectedColleges.append(currentCollege.name)
+            if !selectedColleges.contains(currentCollege.name) {
+                selectedColleges.append(currentCollege.name)
+            }
             prefs.setObject(selectedColleges, forKey: "selectedColleges")
         }
         
@@ -165,19 +170,25 @@ class DisplayCollegeViewController: UIViewController {
         
         
         //COLLEGE LOCATION
-        let other = NSUserDefaults.standardUserDefaults()
-        //other.removeObjectForKey("selectedLocation")
-        if let otherDefault = other.objectForKey("selectedLocation") as? [String] {
-            var loc = other.objectForKey("selectedLocation") as! [String]
-            loc.append(currentCollege.stateAbbrev)
-            other.setObject(loc, forKey: "selectedLocation")
-        } else {
-            selectedLocation.append(currentCollege.stateAbbrev)
-            other.setObject(selectedLocation, forKey: "selectedLocation")
-        }
+//        let other = NSUserDefaults.standardUserDefaults()
+//        //other.removeObjectForKey("selectedLocation")
+//        if (other.objectForKey("selectedLocation") as? [String]) != nil {
+//            var loc = other.objectForKey("selectedLocation") as! [String]
+//            if !loc.contains(currentCollege.stateAbbrev) {
+//                loc.append(currentCollege.stateAbbrev)
+//            }
+//            other.setObject(loc, forKey: "selectedLocation")
+//        } else {
+//            if !selectedLocation.contains(currentCollege.stateAbbrev) {
+//                selectedLocation.append(currentCollege.stateAbbrev)
+//            }
+//            other.setObject(selectedLocation, forKey: "selectedLocation")
+//        }
+//        
+//        let otherDefault = other.objectForKey("selectedLocation") as! [String]
+//        print("lol", otherDefault)
         
-        let otherDefault = other.objectForKey("selectedLocation") as! [String]
-        print("lol", otherDefault)
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -198,21 +209,6 @@ class DisplayCollegeViewController: UIViewController {
             
             //print("willson" ,destinationVC.college)
         }
-        
-        if segue.identifier == "collegeNote" {
-            let destinationVC = segue.destinationViewController as! DisplayNoteViewController
-            destinationVC.college = currentCollege
-        }
-        
-//        if segue.identifier == "displayNote" {
-//            let destinationVC = segue.destinationViewController as! ListNotesTableViewController
-//        }
-        
-//        if segue.identifier == "heartSegue" {
-//            let destinationVC = segue.destinationViewController as! MyListTableViewController
-//            destinationVC.college = currentCollege
-//            
-//        }
     }
     
     
