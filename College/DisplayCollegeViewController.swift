@@ -56,7 +56,7 @@ class DisplayCollegeViewController: UIViewController {
     
     var currentCollege: Colleges!
     
-    var selectedColleges = [String]()
+    var selectedColleges = [AnyObject]()
     
     var selectedLocation = [String]()
     
@@ -147,26 +147,30 @@ class DisplayCollegeViewController: UIViewController {
 
     // ADD COLLEGE TO MYLIST
     @IBAction func heartButtonTapped(sender: AnyObject) {
-       
-        //COLLEGE NAME
-        let prefs = NSUserDefaults.standardUserDefaults()
-        //prefs.removeObjectForKey("selectedColleges")
-        if (prefs.objectForKey("selectedColleges") as? [String]) != nil {
-        var iheartcollege = prefs.objectForKey("selectedColleges") as! [String]
-            //heartButton.enabled = false
-            if !iheartcollege.contains(currentCollege.name) {
-                iheartcollege.append(currentCollege.name)
-            }
-            prefs.setObject(iheartcollege, forKey: "selectedColleges")
-        } else {
-            if !selectedColleges.contains(currentCollege.name) {
-                selectedColleges.append(currentCollege.name)
-            }
-            prefs.setObject(selectedColleges, forKey: "selectedColleges")
-        }
+        RealmHelper.addCollege(currentCollege)
         
-        let userDefaults = prefs.objectForKey("selectedColleges") as! [String]
-        print("lol", userDefaults)
+        //COLLEGE NAME
+//        let prefs = NSUserDefaults.standardUserDefaults()
+//        //prefs.removeObjectForKey("selectedColleges")
+//        if (prefs.objectForKey("selectedColleges") as? [String]) != nil {
+//        var iheartcollege = prefs.objectForKey("selectedColleges") as! [AnyObject]
+//            //heartButton.enabled = false
+//            //if !iheartcollege.contains(currentCollege as! AnyObject) {
+//                iheartcollege.append(currentCollege as! AnyObject)
+//            //}
+//            prefs.setObject(iheartcollege, forKey: "selectedColleges")
+//        } else {
+//            //if !selectedColleges.contains(currentCollege as! AnyObject) {
+//                //selectedColleges.append(currentCollege as! AnyObject)
+//            //}
+//            //prefs.setObject(selectedColleges, forKey: "selectedColleges")
+//        }
+//        var iheartcollege = prefs.objectForKey("selectedColleges") as! [AnyObject]
+//        iheartcollege.append(currentCollege as! AnyObject)
+//        prefs.setObject([currentCollege as! AnyObject], forKey: "selectedColleges")
+//        
+//        let userDefaults = prefs.objectForKey("selectedColleges") as! [String]
+//        print("lol", userDefaults)
         
         
         //COLLEGE LOCATION

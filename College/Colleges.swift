@@ -8,31 +8,33 @@
 
 import Foundation
 import SwiftyJSON
+import RealmSwift
 
-struct Colleges {
-    let unitId: String
-    let name: String
-    let stateAbbrev: String
-    let inStatePrice: String
-    let outStatePrice: String
-    let financialAid: String
-    let percentAdmitted: String
-    let applicantsTotal: String
-    let enrolledTotal: String
-    let satCritical75: String
-    let satMath75: String
-    let satWriting75: String
-    let actCom75: String
-    let actE75: String
-    let actMath75: String
-    let satCritical25: String
-    let satMath25: String
-    let satWriting25: String
-    let actCom25: String
-    let actE25: String
-    let actMath25: String
+class Colleges: Object {
+    dynamic var unitId: String = ""
+    dynamic var name: String = ""
+    dynamic var stateAbbrev: String = ""
+    dynamic var inStatePrice: String = ""
+    dynamic var outStatePrice: String = ""
+    dynamic var financialAid: String = ""
+    dynamic var percentAdmitted: String = ""
+    dynamic var applicantsTotal: String = ""
+    dynamic var enrolledTotal: String = ""
+    dynamic var satCritical75: String = ""
+    dynamic var satMath75: String = ""
+    dynamic var satWriting75: String = ""
+    dynamic var actCom75: String = ""
+    dynamic var actE75: String = ""
+    dynamic var actMath75: String = ""
+    dynamic var satCritical25: String = ""
+    dynamic var satMath25: String = ""
+    dynamic var satWriting25: String = ""
+    dynamic var actCom25: String = ""
+    dynamic var actE25: String = ""
+    dynamic var actMath25: String = ""
     
-    init(json: JSON) {
+    convenience init(json: JSON) {
+        self.init()
         self.unitId = json["UnitID"].stringValue
         self.name = json["Institution Name"].stringValue
         self.stateAbbrev = json["State abbreviation (HD2015)"].stringValue

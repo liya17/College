@@ -11,6 +11,13 @@ import RealmSwift
 class RealmHelper {
     //static methods will go here
     
+    static func addCollege(college: Colleges) {
+        let realm = try! Realm()
+        try! realm.write() {
+            realm.add(college)
+        }
+    }
+    
     static func addNote(note: Note) {
         let realm = try! Realm()
         try! realm.write() {
@@ -32,6 +39,11 @@ class RealmHelper {
             noteToBeUpdated.content = newNote.content
             noteToBeUpdated.modificationTime = newNote.modificationTime
         }
+    }
+    
+    static func retrieveColleges() -> Results<Colleges> {
+        let realm = try! Realm()
+        return realm.objects(Colleges)
     }
     
     static func retrieveNotes() -> Results<Note> {

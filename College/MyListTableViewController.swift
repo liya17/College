@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import RealmSwift
 
 class MyListTableViewController: UITableViewController {
     
@@ -27,6 +28,12 @@ class MyListTableViewController: UITableViewController {
     
     var textArray:[String] = [String]()
     
+    var colleges: Results<Colleges>! {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     //var selectedColleges = [String]()
     
     //var selectedColleges = [String]()
@@ -43,7 +50,8 @@ class MyListTableViewController: UITableViewController {
         
 //        NSUserDefaults.standardUserDefaults().objectForKey("selectedColleges") as? [String] ?? [String]()
         
-        tableView.reloadData()
+        
+        //tableView.reloadData()
 
         
 //        ourText = defaults.objectForKey("selectedColleges")! as! String
@@ -125,9 +133,13 @@ class MyListTableViewController: UITableViewController {
         
         self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
-        NSUserDefaults.standardUserDefaults().objectForKey("selectedColleges") as? [String] ?? [String]()
         
-        tableView.reloadData()
+        self.colleges = RealmHelper.retrieveColleges()
+        
+        
+        //NSUserDefaults.standardUserDefaults().objectForKey("selectedColleges") as? [String] ?? [String]()
+        
+        //tableView.reloadData()
 
 //
 //        tableView.delegate = self
@@ -210,7 +222,7 @@ class MyListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return  collegeDefaults.count
+        return  colleges.count
     }
 
     
@@ -219,14 +231,14 @@ class MyListTableViewController: UITableViewController {
         
        let cell = tableView.dequeueReusableCellWithIdentifier("selectedCollegeTableViewCell", forIndexPath: indexPath) as! SelectedCollegeTableViewCell
         
-//        let row = indexPath.row
+        let row = indexPath.row
 //        
 //        let colUnitID = myArray[row]
         
 //        cell.collegeName.text = (colUnitID as! String)
         
         //cell.collegeName.text = "hi5"
-        cell.collegeName.text = collegeDefaults[indexPath.row]
+        cell.collegeName.text = colleges[row].name
         //cell.collegeLocation.text = locationDefaults[indexPath.row]
 //        cell.collegeName.text = college.name    
 //        cell.collegeLocation.text = college.stateAbbrev
