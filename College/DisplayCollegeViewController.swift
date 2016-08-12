@@ -64,17 +64,11 @@ class DisplayCollegeViewController: UIViewController {
     
     var notes: Results<Note>!
     
-    //var college: Colleges!
-    
-    //let userDefaults = [String]()
-    
     let kUserDefault = NSUserDefaults.standardUserDefaults()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //college = currentCollege
         
         guard let jsonURL = NSBundle.mainBundle().URLForResource("college", withExtension: "json")
             else{
@@ -92,7 +86,6 @@ class DisplayCollegeViewController: UIViewController {
         
         selectedLocation = []
 
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -148,51 +141,7 @@ class DisplayCollegeViewController: UIViewController {
     // ADD COLLEGE TO MYLIST
     @IBAction func heartButtonTapped(sender: AnyObject) {
         RealmHelper.addCollege(currentCollege)
-        
-        //COLLEGE NAME
-//        let prefs = NSUserDefaults.standardUserDefaults()
-//        //prefs.removeObjectForKey("selectedColleges")
-//        if (prefs.objectForKey("selectedColleges") as? [String]) != nil {
-//        var iheartcollege = prefs.objectForKey("selectedColleges") as! [AnyObject]
-//            //heartButton.enabled = false
-//            //if !iheartcollege.contains(currentCollege as! AnyObject) {
-//                iheartcollege.append(currentCollege as! AnyObject)
-//            //}
-//            prefs.setObject(iheartcollege, forKey: "selectedColleges")
-//        } else {
-//            //if !selectedColleges.contains(currentCollege as! AnyObject) {
-//                //selectedColleges.append(currentCollege as! AnyObject)
-//            //}
-//            //prefs.setObject(selectedColleges, forKey: "selectedColleges")
-//        }
-//        var iheartcollege = prefs.objectForKey("selectedColleges") as! [AnyObject]
-//        iheartcollege.append(currentCollege as! AnyObject)
-//        prefs.setObject([currentCollege as! AnyObject], forKey: "selectedColleges")
-//        
-//        let userDefaults = prefs.objectForKey("selectedColleges") as! [String]
-//        print("lol", userDefaults)
-        
-        
-        //COLLEGE LOCATION
-//        let other = NSUserDefaults.standardUserDefaults()
-//        //other.removeObjectForKey("selectedLocation")
-//        if (other.objectForKey("selectedLocation") as? [String]) != nil {
-//            var loc = other.objectForKey("selectedLocation") as! [String]
-//            if !loc.contains(currentCollege.stateAbbrev) {
-//                loc.append(currentCollege.stateAbbrev)
-//            }
-//            other.setObject(loc, forKey: "selectedLocation")
-//        } else {
-//            if !selectedLocation.contains(currentCollege.stateAbbrev) {
-//                selectedLocation.append(currentCollege.stateAbbrev)
-//            }
-//            other.setObject(selectedLocation, forKey: "selectedLocation")
-//        }
-//        
-//        let otherDefault = other.objectForKey("selectedLocation") as! [String]
-//        print("lol", otherDefault)
-        
-
+        heartButton.enabled = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -209,9 +158,6 @@ class DisplayCollegeViewController: UIViewController {
         if segue.identifier == "selectedCollege" {
             let destinationVC = segue.destinationViewController as! MyListTableViewController
             destinationVC.college = currentCollege
-            //destinationVC.array = otherArray
-            
-            //print("willson" ,destinationVC.college)
         }
     }
     

@@ -10,9 +10,6 @@ import UIKit
 import SwiftyJSON
 import RealmSwift
 
-//import Alamofire
-//import AlamofireImage
-//import AlamofireNetworkActivityIndicator
 
 class ViewController: UITableViewController {
     
@@ -53,8 +50,6 @@ class ViewController: UITableViewController {
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         
-        //        self.navigationItem.titleView = searchController.searchBar
-        
         searchController.hidesNavigationBarDuringPresentation = false
     }
     
@@ -65,18 +60,11 @@ class ViewController: UITableViewController {
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 255.0/255.0, green: 168.0/255.0, blue: 18.0/255.0, alpha: 1.0)
         
-//        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 20)!]
         
         navigationController?.navigationBar.tintColor = UIColor.whiteColor();
         
         self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
 
-        
-        //UITabBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 240.0/255.0, blue: 203.0/255.0, alpha: 1.0)
-        
-        //        let tableHeaderView: UIView = UIView.init(frame: searchController.searchBar.frame)
-        //        tableHeaderView.addSubview(searchController.searchBar)
-        //        self.tableView.tableHeaderView = tableHeaderView
     
         searchController.searchBar.barTintColor = UIColor.whiteColor()
         searchController.searchBar.tintColor = UIColor.blackColor()
@@ -110,7 +98,6 @@ class ViewController: UITableViewController {
                 // pass information
                 var college: Colleges
                 if searchController.active {
-//                & searchController.searchBar.text != "" {
                     college = filteredColleges[(tableView.indexPathForSelectedRow?.row)!]
                 }
                 else {
@@ -146,6 +133,8 @@ class ViewController: UITableViewController {
         // 2
         cell.collegeNameLabel.text = college.name
         cell.locationLabel.text = college.stateAbbrev
+        
+        cell.separatorInset = UIEdgeInsetsZero;
         
         return cell
     }

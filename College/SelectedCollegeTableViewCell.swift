@@ -12,5 +12,4 @@ class SelectedCollegeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collegeName: UILabel!
 
-    @IBOutlet weak var collegeLocation: UILabel!
 }

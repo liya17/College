@@ -153,7 +153,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="112" id="kuf-T3-aO5"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -173,7 +173,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="39" id="UyE-fe-1V3"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -182,15 +182,15 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1En-uT-MOS" userLabel="In-State Stack View">
                                                         <rect key="frame" x="0.0" y="92" width="335" height="26"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="In-State Tuition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbX-7g-Hkd">
-                                                                <rect key="frame" x="0.0" y="0.0" width="289" height="26"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="In-State Tuition:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbX-7g-Hkd">
+                                                                <rect key="frame" x="0.0" y="0.0" width="275" height="26"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="inState" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zt-92-i76">
-                                                                <rect key="frame" x="289" y="0.0" width="46" height="26"/>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
+                                                                <rect key="frame" x="275" y="0.0" width="60" height="26"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -199,18 +199,18 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="l27-Ui-1tM" userLabel="Out-State Stack View">
                                                         <rect key="frame" x="0.0" y="138" width="335" height="33"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Out-of-State Tuition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYh-Uz-X0X">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Out-of-State Tuition:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYh-Uz-X0X">
                                                                 <rect key="frame" x="0.0" y="0.0" width="269" height="26"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="outState" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65U-JF-Urm">
-                                                                <rect key="frame" x="269" y="0.0" width="66" height="20"/>
+                                                                <rect key="frame" x="269" y="0.0" width="66" height="26"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="66" id="mKY-Ol-k8M"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -220,14 +220,14 @@
                                                         <rect key="frame" x="0.0" y="191" width="335" height="26"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" ambiguous="YES" text="Financial Aid Population: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bq-N2-A53">
-                                                                <rect key="frame" x="0.0" y="0.0" width="261" height="26"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="240" height="26"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="financialAid" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcR-fc-MNy">
-                                                                <rect key="frame" x="261" y="0.0" width="74" height="20"/>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
+                                                                <rect key="frame" x="240" y="0.0" width="95" height="26"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -247,7 +247,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="65" id="ajd-OS-3zt"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -267,7 +267,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="96" id="azh-gr-27y"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="22"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -458,7 +458,7 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*SAT and ACT scores show the 25th to 75th percentile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqB-ca-doW">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*SAT and ACT scores show the 25th to 75th percentile" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqB-ca-doW">
                                                 <rect key="frame" x="53" y="1161" width="269" height="14"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="12"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -596,6 +596,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="openheart"/>
                                     <state key="selected" image="hearts"/>
+                                    <state key="highlighted" image="openheart"/>
                                     <connections>
                                         <action selector="heartButtonTapped:" destination="gPF-gs-cbl" eventType="touchUpInside" id="oO1-b6-P1h"/>
                                     </connections>
@@ -643,7 +644,7 @@
             </objects>
             <point key="canvasLocation" x="2367.5" y="287"/>
         </scene>
-        <!--List Notes Table View Controller-->
+        <!--NOTES-->
         <scene sceneID="Zha-TK-ka9">
             <objects>
                 <tableViewController id="jht-98-T8a" customClass="ListNotesTableViewController" customModule="College" customModuleProvider="target" sceneMemberID="viewController">
@@ -684,7 +685,7 @@
                             <outlet property="delegate" destination="jht-98-T8a" id="6kn-WT-TVa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="lwo-CX-rhX">
+                    <navigationItem key="navigationItem" title="NOTES" id="lwo-CX-rhX">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aMt-mN-ybS">
                             <connections>
                                 <segue destination="0f4-fo-EWx" kind="show" identifier="addNote" id="9kk-Wd-4LM"/>
@@ -793,9 +794,7 @@
         <scene sceneID="U3g-mA-il9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b4f-6Z-3Fm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Colleges" image="university" selectedImage="university" id="C2h-nV-ImI">
-                        <inset key="imageInsets" minX="1" minY="2" maxX="1" maxY="2"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Colleges" image="uni" selectedImage="university" id="C2h-nV-ImI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="elu-eu-FcF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -810,7 +809,7 @@
             </objects>
             <point key="canvasLocation" x="1417.5" y="-29.5"/>
         </scene>
-        <!--My List Table View Controller-->
+        <!--FAVORITE COLLEGES-->
         <scene sceneID="Qux-LD-BHN">
             <objects>
                 <tableViewController id="g0H-bv-jXn" customClass="MyListTableViewController" customModule="College" customModuleProvider="target" sceneMemberID="viewController">
@@ -860,7 +859,7 @@
                             <outlet property="delegate" destination="g0H-bv-jXn" id="PRH-Xp-W4e"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="fsK-Os-MKY"/>
+                    <navigationItem key="navigationItem" title="FAVORITE COLLEGES" id="fsK-Os-MKY"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAv-S1-0bw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -889,7 +888,7 @@
         <scene sceneID="Jid-cN-sLo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ga6-hj-qua" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" image="hearts" id="rUG-ci-hAj"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="tabHeart" id="rUG-ci-hAj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cqu-Tu-sjH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -909,12 +908,14 @@
         <image name="EditButton" width="26" height="25"/>
         <image name="hearts" width="20" height="18"/>
         <image name="new" width="190" height="40"/>
-        <image name="openheart" width="20" height="17"/>
+        <image name="openheart" width="30" height="30"/>
+        <image name="tabHeart" width="26" height="24"/>
+        <image name="uni" width="30" height="30"/>
         <image name="university" width="30" height="30"/>
         <image name="world_map" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9kk-Wd-4LM"/>
-        <segue reference="Hhf-gw-uys"/>
+        <segue reference="QeE-MS-umA"/>
     </inferredMetricsTieBreakers>
 </document>

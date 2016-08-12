@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "openHeart.png"
+      "filename" : "launchS.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "openHeart@2x.png"
+      "filename" : "launchS@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "openHeart@3x.png"
+      "filename" : "launchS@3x.png"
     }
   ],
   "info" : {
