@@ -60,11 +60,11 @@ class DisplayCollegeViewController: UIViewController {
     
     var selectedLocation = [String]()
     
-    var otherArray = [String]()
+    //var otherArray = [String]()
     
-    var notes: Results<Note>!
+    //var notes: Results<Note>!
     
-    let kUserDefault = NSUserDefaults.standardUserDefaults()
+    //let kUserDefault = NSUserDefaults.standardUserDefaults()
     
     
     override func viewDidLoad() {
@@ -138,9 +138,14 @@ class DisplayCollegeViewController: UIViewController {
         
     }
 
+
     // ADD COLLEGE TO MYLIST
     @IBAction func heartButtonTapped(sender: AnyObject) {
+        let heartButtonClickedImage = UIImage(named: "hearts")! as UIImage
+        heartButton.setImage(heartButtonClickedImage, forState: UIControlState.Normal)
+
         RealmHelper.addCollege(currentCollege)
+        
         heartButton.enabled = false
     }
     
@@ -150,10 +155,10 @@ class DisplayCollegeViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "mapSegue" {
-            let destinationVC = segue.destinationViewController as! CollegeMapViewController
-            destinationVC.college = currentCollege
-        }
+        //if segue.identifier == "mapSegue" {
+            //let destinationVC = segue.destinationViewController as! CollegeMapViewController
+            //destinationVC.college = currentCollege
+        //}
         
         if segue.identifier == "selectedCollege" {
             let destinationVC = segue.destinationViewController as! MyListTableViewController

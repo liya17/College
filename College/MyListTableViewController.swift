@@ -28,7 +28,8 @@ class MyListTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-
+    
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
@@ -41,8 +42,8 @@ class MyListTableViewController: UITableViewController {
         
         self.clearsSelectionOnViewWillAppear = false
         
-        
         self.colleges = RealmHelper.retrieveColleges()
+        
     }
     
     override func viewDidLoad() {
@@ -52,9 +53,7 @@ class MyListTableViewController: UITableViewController {
         
         self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
-        
         self.colleges = RealmHelper.retrieveColleges()
-        
         
     }
 
